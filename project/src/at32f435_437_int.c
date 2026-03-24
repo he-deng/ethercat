@@ -312,6 +312,7 @@ void TMR7_GLOBAL_IRQHandler(void)
     /* clear flag */
     tmr_flag_clear(TMR7, TMR_OVF_FLAG);
     /* add user code end TMR7_TMR_OVF_FLAG */
+    ecat_ms_tick++;
   }
 
   /* add user code begin TMR7_GLOBAL_IRQ 1 */

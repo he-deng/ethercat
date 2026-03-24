@@ -90,6 +90,10 @@ V4.00 APPL 4: The EEPROM access through the ESC is added
 ------
 --------------------------------------------------------------------------------------*/
 
+#include "at32f435_437.h"  // <--- 增加：引入 AT32 固件库头文件
+
+volatile UINT32 ecat_ms_tick = 0; // <--- 增加：1ms 计数器实体
+
 #define SELECT_SPI         gpio_bits_reset(GPIOB, GPIO_PINS_12); // 拉低片选
 #define DESELECT_SPI       gpio_bits_set(GPIOB, GPIO_PINS_12);   // 拉高片选
 

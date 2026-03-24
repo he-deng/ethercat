@@ -64,7 +64,10 @@ V5.01 : Start file change log
 /*---------------------------------------------
 -    hardware timer settings
 -----------------------------------------------*/
-
+#define ECAT_TIMER_INC_P_MS  1               // 告诉协议栈：定时器1ms加1
+extern volatile UINT32 ecat_ms_tick;         // 声明一个外部的毫秒计数器
+#define HW_GetTimer()        ecat_ms_tick    // 协议栈获取时间的接口
+#define HW_ClearTimer()      (ecat_ms_tick = 0) // 协议栈清零时间的接口
 
 /*---------------------------------------------
 -    Interrupt and Timer defines

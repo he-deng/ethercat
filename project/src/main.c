@@ -34,7 +34,7 @@
 
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
-
+#include "ecatappl.h"
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -105,14 +105,15 @@ int main(void)
   wk_tmr7_init();
 
   /* add user code begin 2 */
-
+  HW_Init();    // 协议栈硬件接口初始化（会使能全局中断）
+  MainInit();   // EtherCAT 协议栈及应用层初始化
 
   /* add user code end 2 */
 
   while(1)
   {
     /* add user code begin 3 */
-
+    MainLoop();
     /* add user code end 3 */
   }
 }

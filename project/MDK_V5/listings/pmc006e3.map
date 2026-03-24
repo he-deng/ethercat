@@ -1,0 +1,1477 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    at32f435_437_int.o(i.EXINT0_IRQHandler) refers to at32f435_437_exint.o(i.exint_interrupt_flag_get) for exint_interrupt_flag_get
+    at32f435_437_int.o(i.EXINT0_IRQHandler) refers to at32f435_437_exint.o(i.exint_flag_clear) for exint_flag_clear
+    at32f435_437_int.o(i.EXINT1_IRQHandler) refers to at32f435_437_exint.o(i.exint_interrupt_flag_get) for exint_interrupt_flag_get
+    at32f435_437_int.o(i.EXINT1_IRQHandler) refers to at32f435_437_exint.o(i.exint_flag_clear) for exint_flag_clear
+    at32f435_437_int.o(i.EXINT9_5_IRQHandler) refers to at32f435_437_exint.o(i.exint_interrupt_flag_get) for exint_interrupt_flag_get
+    at32f435_437_int.o(i.EXINT9_5_IRQHandler) refers to at32f435_437_exint.o(i.exint_flag_clear) for exint_flag_clear
+    at32f435_437_int.o(i.EXINT9_5_IRQHandler) refers to ecatappl.o(i.PDI_Isr) for PDI_Isr
+    at32f435_437_int.o(i.TMR7_GLOBAL_IRQHandler) refers to at32f435_437_tmr.o(i.tmr_interrupt_flag_get) for tmr_interrupt_flag_get
+    at32f435_437_int.o(i.TMR7_GLOBAL_IRQHandler) refers to at32f435_437_tmr.o(i.tmr_flag_clear) for tmr_flag_clear
+    at32f435_437_int.o(i.TMR7_GLOBAL_IRQHandler) refers to el9800hw.o(.data) for ecat_ms_tick
+    at32f435_437_wk_config.o(i.wk_nvic_config) refers to at32f435_437_misc.o(i.nvic_priority_group_config) for nvic_priority_group_config
+    at32f435_437_wk_config.o(i.wk_nvic_config) refers to at32f435_437_wk_config.o(i.__NVIC_GetPriorityGrouping) for __NVIC_GetPriorityGrouping
+    at32f435_437_wk_config.o(i.wk_nvic_config) refers to at32f435_437_wk_config.o(i.NVIC_EncodePriority) for NVIC_EncodePriority
+    at32f435_437_wk_config.o(i.wk_nvic_config) refers to at32f435_437_wk_config.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    at32f435_437_wk_config.o(i.wk_nvic_config) refers to at32f435_437_misc.o(i.nvic_irq_enable) for nvic_irq_enable
+    at32f435_437_wk_config.o(i.wk_periph_clock_config) refers to at32f435_437_crm.o(i.crm_periph_clock_enable) for crm_periph_clock_enable
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_reset) for crm_reset
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_periph_clock_enable) for crm_periph_clock_enable
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_clock_source_enable) for crm_clock_source_enable
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_flag_get) for crm_flag_get
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_pll_config) for crm_pll_config
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_ahb_div_set) for crm_ahb_div_set
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_apb2_div_set) for crm_apb2_div_set
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_apb1_div_set) for crm_apb1_div_set
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_auto_step_mode_enable) for crm_auto_step_mode_enable
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_sysclk_switch) for crm_sysclk_switch
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to at32f435_437_crm.o(i.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    at32f435_437_wk_config.o(i.wk_system_clock_config) refers to system_at32f435_437.o(i.system_core_clock_update) for system_core_clock_update
+    main.o(i.main) refers to at32f435_437_wk_config.o(i.wk_system_clock_config) for wk_system_clock_config
+    main.o(i.main) refers to at32f435_437_wk_config.o(i.wk_periph_clock_config) for wk_periph_clock_config
+    main.o(i.main) refers to at32f435_437_wk_config.o(i.wk_nvic_config) for wk_nvic_config
+    main.o(i.main) refers to wk_system.o(i.wk_timebase_init) for wk_timebase_init
+    main.o(i.main) refers to wk_gpio.o(i.wk_gpio_config) for wk_gpio_config
+    main.o(i.main) refers to wk_spi.o(i.wk_spi2_init) for wk_spi2_init
+    main.o(i.main) refers to wk_exint.o(i.wk_exint_config) for wk_exint_config
+    main.o(i.main) refers to wk_tmr.o(i.wk_tmr7_init) for wk_tmr7_init
+    main.o(i.main) refers to el9800hw.o(i.HW_Init) for HW_Init
+    main.o(i.main) refers to ecatappl.o(i.MainInit) for MainInit
+    main.o(i.main) refers to ecatappl.o(i.MainLoop) for MainLoop
+    wk_system.o(i.wk_delay_ms) refers to wk_system.o(i.wk_delay_us) for wk_delay_us
+    wk_system.o(i.wk_delay_us) refers to wk_system.o(.data) for ticks_count_us
+    wk_system.o(i.wk_timebase_init) refers to at32f435_437_crm.o(i.crm_clocks_freq_get) for crm_clocks_freq_get
+    wk_system.o(i.wk_timebase_init) refers to at32f435_437_misc.o(i.systick_clock_source_config) for systick_clock_source_config
+    wk_system.o(i.wk_timebase_init) refers to wk_system.o(.data) for ticks_count_us
+    wk_exint.o(i.wk_exint_config) refers to at32f435_437_gpio.o(i.gpio_default_para_init) for gpio_default_para_init
+    wk_exint.o(i.wk_exint_config) refers to at32f435_437_gpio.o(i.gpio_init) for gpio_init
+    wk_exint.o(i.wk_exint_config) refers to at32f435_437_scfg.o(i.scfg_exint_line_config) for scfg_exint_line_config
+    wk_exint.o(i.wk_exint_config) refers to at32f435_437_exint.o(i.exint_default_para_init) for exint_default_para_init
+    wk_exint.o(i.wk_exint_config) refers to at32f435_437_exint.o(i.exint_init) for exint_init
+    wk_spi.o(i.wk_spi2_init) refers to at32f435_437_gpio.o(i.gpio_default_para_init) for gpio_default_para_init
+    wk_spi.o(i.wk_spi2_init) refers to at32f435_437_spi.o(i.spi_default_para_init) for spi_default_para_init
+    wk_spi.o(i.wk_spi2_init) refers to at32f435_437_gpio.o(i.gpio_pin_mux_config) for gpio_pin_mux_config
+    wk_spi.o(i.wk_spi2_init) refers to at32f435_437_gpio.o(i.gpio_init) for gpio_init
+    wk_spi.o(i.wk_spi2_init) refers to at32f435_437_spi.o(i.spi_init) for spi_init
+    wk_spi.o(i.wk_spi2_init) refers to at32f435_437_spi.o(i.spi_enable) for spi_enable
+    wk_tmr.o(i.wk_tmr7_init) refers to at32f435_437_tmr.o(i.tmr_cnt_dir_set) for tmr_cnt_dir_set
+    wk_tmr.o(i.wk_tmr7_init) refers to at32f435_437_tmr.o(i.tmr_period_buffer_enable) for tmr_period_buffer_enable
+    wk_tmr.o(i.wk_tmr7_init) refers to at32f435_437_tmr.o(i.tmr_base_init) for tmr_base_init
+    wk_tmr.o(i.wk_tmr7_init) refers to at32f435_437_tmr.o(i.tmr_primary_mode_select) for tmr_primary_mode_select
+    wk_tmr.o(i.wk_tmr7_init) refers to at32f435_437_tmr.o(i.tmr_counter_enable) for tmr_counter_enable
+    wk_tmr.o(i.wk_tmr7_init) refers to at32f435_437_tmr.o(i.tmr_interrupt_enable) for tmr_interrupt_enable
+    wk_gpio.o(i.wk_gpio_config) refers to at32f435_437_gpio.o(i.gpio_default_para_init) for gpio_default_para_init
+    wk_gpio.o(i.wk_gpio_config) refers to at32f435_437_gpio.o(i.gpio_bits_set) for gpio_bits_set
+    wk_gpio.o(i.wk_gpio_config) refers to at32f435_437_gpio.o(i.gpio_init) for gpio_init
+    at32f435_437_adc.o(i.adc_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_can.o(i.can_interrupt_flag_get) refers to at32f435_437_can.o(i.can_flag_get) for can_flag_get
+    at32f435_437_can.o(i.can_message_receive) refers to at32f435_437_can.o(i.can_receive_fifo_release) for can_receive_fifo_release
+    at32f435_437_can.o(i.can_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_crm.o(i.crm_clocks_freq_get) refers to at32f435_437_crm.o(i.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    at32f435_437_crm.o(i.crm_clocks_freq_get) refers to uldiv.o(.text) for __aeabi_uldivmod
+    at32f435_437_crm.o(i.crm_clocks_freq_get) refers to at32f435_437_crm.o(.constdata) for pll_fr_table
+    at32f435_437_crm.o(i.crm_hext_stable_wait) refers to at32f435_437_crm.o(i.crm_flag_get) for crm_flag_get
+    at32f435_437_crm.o(i.crm_hick_sclk_frequency_select) refers to at32f435_437_crm.o(i.crm_hick_divider_select) for crm_hick_divider_select
+    at32f435_437_crm.o(i.crm_usb_clock_source_select) refers to at32f435_437_crm.o(i.crm_hick_sclk_frequency_select) for crm_hick_sclk_frequency_select
+    at32f435_437_dac.o(i.dac_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_dvp.o(i.dvp_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_ertc.o(i.ertc_alarm_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_alarm_enable) refers to at32f435_437_ertc.o(i.ertc_wait_flag) for ertc_wait_flag
+    at32f435_437_ertc.o(i.ertc_alarm_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_alarm_get) refers to at32f435_437_ertc.o(i.ertc_bcd_to_num) for ertc_bcd_to_num
+    at32f435_437_ertc.o(i.ertc_alarm_mask_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_alarm_mask_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_alarm_set) refers to at32f435_437_ertc.o(i.ertc_num_to_bcd) for ertc_num_to_bcd
+    at32f435_437_ertc.o(i.ertc_alarm_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_alarm_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_alarm_sub_second_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_alarm_sub_second_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_alarm_week_date_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_alarm_week_date_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_cal_output_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_cal_output_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_cal_output_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_cal_output_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_calendar_get) refers to at32f435_437_ertc.o(i.ertc_bcd_to_num) for ertc_bcd_to_num
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_enable) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_enable) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_coarse_calibration_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_date_set) refers to at32f435_437_ertc.o(i.ertc_num_to_bcd) for ertc_num_to_bcd
+    at32f435_437_ertc.o(i.ertc_date_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_date_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_date_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_date_set) refers to at32f435_437_ertc.o(i.ertc_wait_update) for ertc_wait_update
+    at32f435_437_ertc.o(i.ertc_date_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_daylight_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_daylight_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_direct_read_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_direct_read_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_divider_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_divider_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_divider_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_divider_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_hour_mode_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_hour_mode_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_hour_mode_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_hour_mode_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_init_mode_enter) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_interrupt_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_interrupt_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_output_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_output_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_refer_clock_detect_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_refer_clock_detect_enable) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_refer_clock_detect_enable) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_refer_clock_detect_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_reset) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_reset) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_reset) refers to at32f435_437_ertc.o(i.ertc_wait_update) for ertc_wait_update
+    at32f435_437_ertc.o(i.ertc_reset) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_smooth_calibration_config) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_smooth_calibration_config) refers to at32f435_437_ertc.o(i.ertc_wait_flag) for ertc_wait_flag
+    at32f435_437_ertc.o(i.ertc_smooth_calibration_config) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_1_pin_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_1_pin_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_detect_freq_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_detect_freq_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_filter_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_filter_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_precharge_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_precharge_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_pull_up_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_pull_up_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_timestamp_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_timestamp_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_tamper_valid_edge_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_tamper_valid_edge_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_time_adjust) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_time_adjust) refers to at32f435_437_ertc.o(i.ertc_wait_flag) for ertc_wait_flag
+    at32f435_437_ertc.o(i.ertc_time_adjust) refers to at32f435_437_ertc.o(i.ertc_wait_update) for ertc_wait_update
+    at32f435_437_ertc.o(i.ertc_time_adjust) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_time_set) refers to at32f435_437_ertc.o(i.ertc_num_to_bcd) for ertc_num_to_bcd
+    at32f435_437_ertc.o(i.ertc_time_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_time_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_enter) for ertc_init_mode_enter
+    at32f435_437_ertc.o(i.ertc_time_set) refers to at32f435_437_ertc.o(i.ertc_init_mode_exit) for ertc_init_mode_exit
+    at32f435_437_ertc.o(i.ertc_time_set) refers to at32f435_437_ertc.o(i.ertc_wait_update) for ertc_wait_update
+    at32f435_437_ertc.o(i.ertc_time_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_timestamp_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_timestamp_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_timestamp_get) refers to at32f435_437_ertc.o(i.ertc_bcd_to_num) for ertc_bcd_to_num
+    at32f435_437_ertc.o(i.ertc_timestamp_pin_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_timestamp_pin_select) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_timestamp_valid_edge_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_timestamp_valid_edge_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_wait_flag) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_wait_flag) refers to at32f435_437_ertc.o(i.ertc_flag_get) for ertc_flag_get
+    at32f435_437_ertc.o(i.ertc_wakeup_clock_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_wakeup_clock_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_wakeup_counter_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_wakeup_counter_set) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_ertc.o(i.ertc_wakeup_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_disable) for ertc_write_protect_disable
+    at32f435_437_ertc.o(i.ertc_wakeup_enable) refers to at32f435_437_ertc.o(i.ertc_wait_flag) for ertc_wait_flag
+    at32f435_437_ertc.o(i.ertc_wakeup_enable) refers to at32f435_437_ertc.o(i.ertc_write_protect_enable) for ertc_write_protect_enable
+    at32f435_437_flash.o(i.flash_bank1_erase) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_bank1_operation_wait_for) refers to at32f435_437_flash.o(i.flash_bank1_operation_status_get) for flash_bank1_operation_status_get
+    at32f435_437_flash.o(i.flash_bank2_erase) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_flash.o(i.flash_bank2_operation_wait_for) refers to at32f435_437_flash.o(i.flash_bank2_operation_status_get) for flash_bank2_operation_status_get
+    at32f435_437_flash.o(i.flash_block_erase) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_block_erase) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_flash.o(i.flash_byte_program) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_byte_program) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_flash.o(i.flash_crc_calibrate) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_eopb0_config) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_epp_set) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_epp_set) refers to at32f435_437_flash.o(.constdata) for .constdata
+    at32f435_437_flash.o(i.flash_fap_enable) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_halfword_program) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_halfword_program) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_flash.o(i.flash_internal_all_erase) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_internal_all_erase) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_flash.o(i.flash_operation_wait_for) refers to at32f435_437_flash.o(i.flash_operation_status_get) for flash_operation_status_get
+    at32f435_437_flash.o(i.flash_sector_erase) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_sector_erase) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_flash.o(i.flash_slib_disable) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_slib_enable) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_ssb_set) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_user_system_data_erase) refers to at32f435_437_flash.o(i.flash_fap_status_get) for flash_fap_status_get
+    at32f435_437_flash.o(i.flash_user_system_data_erase) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_user_system_data_program) refers to at32f435_437_flash.o(i.flash_operation_wait_for) for flash_operation_wait_for
+    at32f435_437_flash.o(i.flash_word_program) refers to at32f435_437_flash.o(i.flash_bank1_operation_wait_for) for flash_bank1_operation_wait_for
+    at32f435_437_flash.o(i.flash_word_program) refers to at32f435_437_flash.o(i.flash_bank2_operation_wait_for) for flash_bank2_operation_wait_for
+    at32f435_437_gpio.o(i.gpio_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_i2c.o(i.i2c_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_pwc.o(i.pwc_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_qspi.o(i.qspi_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_scfg.o(i.scfg_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_spi.o(i.i2s_init) refers to at32f435_437_crm.o(i.crm_clocks_freq_get) for crm_clocks_freq_get
+    at32f435_437_spi.o(i.spi_i2s_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_tmr.o(i.tmr_external_clock_mode1_config) refers to at32f435_437_tmr.o(i.tmr_external_clock_config) for tmr_external_clock_config
+    at32f435_437_tmr.o(i.tmr_external_clock_mode2_config) refers to at32f435_437_tmr.o(i.tmr_external_clock_config) for tmr_external_clock_config
+    at32f435_437_tmr.o(i.tmr_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_usart.o(i.usart_init) refers to at32f435_437_crm.o(i.crm_clocks_freq_get) for crm_clocks_freq_get
+    at32f435_437_usart.o(i.usart_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    at32f435_437_usb.o(i.usb_global_init) refers to at32f435_437_usb.o(i.usb_global_reset) for usb_global_reset
+    at32f435_437_usb.o(i.usb_host_disable) refers to at32f435_437_usb.o(i.usb_flush_rx_fifo) for usb_flush_rx_fifo
+    at32f435_437_usb.o(i.usb_host_disable) refers to at32f435_437_usb.o(i.usb_flush_tx_fifo) for usb_flush_tx_fifo
+    at32f435_437_wwdt.o(i.wwdt_reset) refers to at32f435_437_crm.o(i.crm_periph_reset) for crm_periph_reset
+    startup_at32f435_437.o(RESET) refers to startup_at32f435_437.o(STACK) for __initial_sp
+    startup_at32f435_437.o(RESET) refers to startup_at32f435_437.o(.text) for Reset_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.NMI_Handler) for NMI_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.HardFault_Handler) for HardFault_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.MemManage_Handler) for MemManage_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.BusFault_Handler) for BusFault_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.SVC_Handler) for SVC_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.PendSV_Handler) for PendSV_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.SysTick_Handler) for SysTick_Handler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.EXINT0_IRQHandler) for EXINT0_IRQHandler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.EXINT1_IRQHandler) for EXINT1_IRQHandler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.EXINT9_5_IRQHandler) for EXINT9_5_IRQHandler
+    startup_at32f435_437.o(RESET) refers to at32f435_437_int.o(i.TMR7_GLOBAL_IRQHandler) for TMR7_GLOBAL_IRQHandler
+    startup_at32f435_437.o(.text) refers to system_at32f435_437.o(i.SystemInit) for SystemInit
+    startup_at32f435_437.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_at32f435_437.o(i.system_core_clock_update) refers to at32f435_437_crm.o(i.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    system_at32f435_437.o(i.system_core_clock_update) refers to uldiv.o(.text) for __aeabi_uldivmod
+    system_at32f435_437.o(i.system_core_clock_update) refers to system_at32f435_437.o(.data) for system_core_clock
+    system_at32f435_437.o(i.system_core_clock_update) refers to system_at32f435_437.o(.constdata) for pll_fr_table
+    coeappl.o(i.AddObjectsToObjDictionary) refers to coeappl.o(i.COE_AddObjectToDic) for COE_AddObjectToDic
+    coeappl.o(i.COE_AddObjectToDic) refers to coeappl.o(.data) for ObjDicList
+    coeappl.o(i.COE_ClearObjDictionary) refers to coeappl.o(i.COE_RemoveDicEntry) for COE_RemoveDicEntry
+    coeappl.o(i.COE_ClearObjDictionary) refers to coeappl.o(.data) for ObjDicList
+    coeappl.o(i.COE_GetObjectDictionary) refers to coeappl.o(.data) for ObjDicList
+    coeappl.o(i.COE_Main) refers to malloc.o(i.free) for free
+    coeappl.o(i.COE_Main) refers to sdoserv.o(i.SDOS_SdoRes) for SDOS_SdoRes
+    coeappl.o(i.COE_Main) refers to sdoserv.o(.data) for pSdoPendFunc
+    coeappl.o(i.COE_ObjDictionaryInit) refers to coeappl.o(i.AddObjectsToObjDictionary) for AddObjectsToObjDictionary
+    coeappl.o(i.COE_ObjDictionaryInit) refers to coeappl.o(.data) for ObjDicList
+    coeappl.o(i.COE_ObjInit) refers to coeappl.o(i.COE_ObjDictionaryInit) for COE_ObjDictionaryInit
+    coeappl.o(i.COE_ObjInit) refers to coeappl.o(i.COE_ClearObjDictionary) for COE_ClearObjDictionary
+    coeappl.o(i.COE_ObjInit) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    coeappl.o(i.COE_ObjInit) refers to objdef.o(.bss) for sSyncManOutPar
+    coeappl.o(i.COE_ObjInit) refers to objdef.o(.data) for bSyncSetByUser
+    coeappl.o(i.COE_ObjInit) refers to sdoserv.o(.data) for u8PendingSdo
+    coeappl.o(i.COE_ObjInit) refers to ecatslv.o(.data) for b32BitDc
+    coeappl.o(i.COE_ObjInit) refers to coeappl.o(.data) for u32LastDc32Value
+    coeappl.o(i.COE_RemoveDicEntry) refers to coeappl.o(.data) for ObjDicList
+    coeappl.o(i.COE_SyncTimeStamp) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    coeappl.o(i.COE_SyncTimeStamp) refers to ecatslv.o(.data) for b32BitDc
+    coeappl.o(i.COE_SyncTimeStamp) refers to coeappl.o(.data) for u64Timestamp
+    coeappl.o(i.COE_UpdateSyncErrorStatus) refers to objdef.o(.bss) for sSyncManOutPar
+    coeappl.o(i.COE_UpdateSyncErrorStatus) refers to objdef.o(.data) for sErrorSettings
+    coeappl.o(i.Read0x10F8) refers to coeappl.o(i.COE_SyncTimeStamp) for COE_SyncTimeStamp
+    coeappl.o(i.Read0x10F8) refers to memcpya.o(.text) for __aeabi_memcpy
+    coeappl.o(i.Read0x10F8) refers to coeappl.o(.data) for u64Timestamp
+    coeappl.o(.data) refers to coeappl.o(.constdata) for asEntryDesc0x1600
+    coeappl.o(.data) refers to ssc-device1.o(.data) for OutputDataProcessDataMapping0x1600
+    coeappl.o(.data) refers to objdef.o(.data) for sErrorSettings
+    coeappl.o(.data) refers to coeappl.o(i.Read0x10F8) for Read0x10F8
+    coeappl.o(.data) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.ECAT_Application) refers to ecatappl.o(i.HandleCycleTimeMeasurement) for HandleCycleTimeMeasurement
+    ecatappl.o(i.ECAT_Application) refers to ssc-device1.o(i.APPL_Application) for APPL_Application
+    ecatappl.o(i.ECAT_Application) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.ECAT_Application) refers to ecatslv.o(.data) for nPdOutputSize
+    ecatappl.o(i.ECAT_CheckTimer) refers to ecatslv.o(i.DC_CheckWatchdog) for DC_CheckWatchdog
+    ecatappl.o(i.ECAT_CheckTimer) refers to ecatslv.o(.data) for bEcatWaitForAlControlRes
+    ecatappl.o(i.ECAT_CheckTimer) refers to coeappl.o(.data) for u64Timestamp
+    ecatappl.o(i.GetSystemTimeDelay) refers to el9800hw.o(i.HW_EscReadIsr) for HW_EscReadIsr
+    ecatappl.o(i.GetSystemTimeDelay) refers to ecatappl.o(.data) for u32SystemTimeReadFailure
+    ecatappl.o(i.HandleCycleTimeMeasurement) refers to ecatappl.o(i.GetSystemTimeDelay) for GetSystemTimeDelay
+    ecatappl.o(i.HandleCycleTimeMeasurement) refers to ecatslv.o(.data) for bDcSyncActive
+    ecatappl.o(i.HandleCycleTimeMeasurement) refers to ecatappl.o(.data) for u32CycleTimeStartValue
+    ecatappl.o(i.HandleCycleTimeMeasurement) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.MainInit) refers to ecatslv.o(i.ECAT_Init) for ECAT_Init
+    ecatappl.o(i.MainInit) refers to coeappl.o(i.COE_ObjInit) for COE_ObjInit
+    ecatappl.o(i.MainInit) refers to el9800hw.o(i.HW_EscReadIsr) for HW_EscReadIsr
+    ecatappl.o(i.MainInit) refers to ecatappl.o(.data) for pAPPL_MainLoop
+    ecatappl.o(i.MainLoop) refers to el9800hw.o(i.HW_GetALEventRegister) for HW_GetALEventRegister
+    ecatappl.o(i.MainLoop) refers to ecatappl.o(i.PDO_OutputMapping) for PDO_OutputMapping
+    ecatappl.o(i.MainLoop) refers to ecatappl.o(i.ECAT_Application) for ECAT_Application
+    ecatappl.o(i.MainLoop) refers to ecatappl.o(i.PDO_InputMapping) for PDO_InputMapping
+    ecatappl.o(i.MainLoop) refers to ecatappl.o(i.ECAT_CheckTimer) for ECAT_CheckTimer
+    ecatappl.o(i.MainLoop) refers to coeappl.o(i.COE_SyncTimeStamp) for COE_SyncTimeStamp
+    ecatappl.o(i.MainLoop) refers to ecatslv.o(i.ECAT_Main) for ECAT_Main
+    ecatappl.o(i.MainLoop) refers to coeappl.o(i.COE_Main) for COE_Main
+    ecatappl.o(i.MainLoop) refers to ecatslv.o(i.CheckIfEcatError) for CheckIfEcatError
+    ecatappl.o(i.MainLoop) refers to ecatappl.o(.data) for bInitFinished
+    ecatappl.o(i.MainLoop) refers to ecatslv.o(.data) for bEscIntEnabled
+    ecatappl.o(i.MainLoop) refers to el9800hw.o(.data) for ecat_ms_tick
+    ecatappl.o(i.MainLoop) refers to coeappl.o(.data) for u32CheckForDcOverrunCnt
+    ecatappl.o(i.PDI_Isr) refers to el9800hw.o(i.HW_GetALEventRegister_Isr) for HW_GetALEventRegister_Isr
+    ecatappl.o(i.PDI_Isr) refers to ecatappl.o(i.PDO_OutputMapping) for PDO_OutputMapping
+    ecatappl.o(i.PDI_Isr) refers to el9800hw.o(i.HW_EscReadIsr) for HW_EscReadIsr
+    ecatappl.o(i.PDI_Isr) refers to ecatappl.o(i.ECAT_Application) for ECAT_Application
+    ecatappl.o(i.PDI_Isr) refers to ecatappl.o(i.PDO_InputMapping) for PDO_InputMapping
+    ecatappl.o(i.PDI_Isr) refers to coeappl.o(i.COE_UpdateSyncErrorStatus) for COE_UpdateSyncErrorStatus
+    ecatappl.o(i.PDI_Isr) refers to ecatslv.o(.data) for bEscIntEnabled
+    ecatappl.o(i.PDI_Isr) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.PDO_InputMapping) refers to el9800hw.o(i.HW_GetALEventRegister_Isr) for HW_GetALEventRegister_Isr
+    ecatappl.o(i.PDO_InputMapping) refers to ecatappl.o(i.GetSystemTimeDelay) for GetSystemTimeDelay
+    ecatappl.o(i.PDO_InputMapping) refers to ssc-device1.o(i.APPL_InputMapping) for APPL_InputMapping
+    ecatappl.o(i.PDO_InputMapping) refers to el9800hw.o(i.HW_EscWriteIsr) for HW_EscWriteIsr
+    ecatappl.o(i.PDO_InputMapping) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.PDO_InputMapping) refers to ecatappl.o(.bss) for aPdInputData
+    ecatappl.o(i.PDO_InputMapping) refers to ecatslv.o(.data) for nPdInputSize
+    ecatappl.o(i.PDO_OutputMapping) refers to ecatappl.o(i.GetSystemTimeDelay) for GetSystemTimeDelay
+    ecatappl.o(i.PDO_OutputMapping) refers to ecatappl.o(i.HandleCycleTimeMeasurement) for HandleCycleTimeMeasurement
+    ecatappl.o(i.PDO_OutputMapping) refers to el9800hw.o(i.HW_EscReadIsr) for HW_EscReadIsr
+    ecatappl.o(i.PDO_OutputMapping) refers to ssc-device1.o(i.APPL_OutputMapping) for APPL_OutputMapping
+    ecatappl.o(i.PDO_OutputMapping) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.PDO_OutputMapping) refers to ecatappl.o(.data) for u32MinCycleTimeStartValue
+    ecatappl.o(i.PDO_OutputMapping) refers to ecatslv.o(.data) for nPdOutputSize
+    ecatappl.o(i.PDO_OutputMapping) refers to ecatappl.o(.bss) for aPdOutputData
+    ecatappl.o(i.Sync0_Isr) refers to el9800hw.o(i.HW_GetALEventRegister_Isr) for HW_GetALEventRegister_Isr
+    ecatappl.o(i.Sync0_Isr) refers to ecatappl.o(i.ECAT_Application) for ECAT_Application
+    ecatappl.o(i.Sync0_Isr) refers to ecatappl.o(i.PDO_InputMapping) for PDO_InputMapping
+    ecatappl.o(i.Sync0_Isr) refers to coeappl.o(i.COE_UpdateSyncErrorStatus) for COE_UpdateSyncErrorStatus
+    ecatappl.o(i.Sync0_Isr) refers to ecatslv.o(.data) for Sync0WdCounter
+    ecatappl.o(i.Sync0_Isr) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatappl.o(i.Sync0_Isr) refers to objdef.o(.data) for sErrorSettings
+    ecatappl.o(i.Sync1_Isr) refers to ecatappl.o(i.PDO_InputMapping) for PDO_InputMapping
+    ecatappl.o(i.Sync1_Isr) refers to ecatslv.o(.data) for Sync1WdCounter
+    ecatappl.o(i.Sync1_Isr) refers to objdef.o(.bss) for sSyncManInPar
+    ecatcoe.o(i.COE_ContinueInd) refers to mailbox.o(i.MBX_MailboxSendReq) for MBX_MailboxSendReq
+    ecatcoe.o(i.COE_ContinueInd) refers to malloc.o(i.malloc) for malloc
+    ecatcoe.o(i.COE_ContinueInd) refers to memcpya.o(.text) for __aeabi_memcpy
+    ecatcoe.o(i.COE_ContinueInd) refers to sdoserv.o(i.SDOS_SdoInfoInd) for SDOS_SdoInfoInd
+    ecatcoe.o(i.COE_ContinueInd) refers to ecatcoe.o(.data) for pCoeSendStored
+    ecatcoe.o(i.COE_ContinueInd) refers to sdoserv.o(.bss) for aSdoInfoHeader
+    ecatcoe.o(i.COE_Init) refers to ecatcoe.o(.data) for pCoeSendStored
+    ecatcoe.o(i.COE_Init) refers to sdoserv.o(.data) for nSdoInfoFragmentsLeft
+    ecatcoe.o(i.COE_ServiceInd) refers to sdoserv.o(i.SDOS_SdoInd) for SDOS_SdoInd
+    ecatcoe.o(i.COE_ServiceInd) refers to sdoserv.o(i.SDOS_SdoInfoInd) for SDOS_SdoInfoInd
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.CheckSmSettings) for CheckSmSettings
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_GenerateMapping) for APPL_GenerateMapping
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.BackToInitTransition) for BackToInitTransition
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.UpdateEEPROMLoadedState) for UpdateEEPROMLoadedState
+    ecatslv.o(i.AL_ControlInd) refers to mailbox.o(i.MBX_StartMailboxHandler) for MBX_StartMailboxHandler
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_StartMailboxHandler) for APPL_StartMailboxHandler
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_StopMailboxHandler) for APPL_StopMailboxHandler
+    ecatslv.o(i.AL_ControlInd) refers to mailbox.o(i.MBX_StopMailboxHandler) for MBX_StopMailboxHandler
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.StartInputHandler) for StartInputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_StartInputHandler) for APPL_StartInputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.SetALEventMask) for SetALEventMask
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_StopInputHandler) for APPL_StopInputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.StopInputHandler) for StopInputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.StartOutputHandler) for StartOutputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_StartOutputHandler) for APPL_StartOutputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_StopOutputHandler) for APPL_StopOutputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.StopOutputHandler) for StopOutputHandler
+    ecatslv.o(i.AL_ControlInd) refers to ssc-device1.o(i.APPL_AckErrorInd) for APPL_AckErrorInd
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.EnableSyncManChannel) for EnableSyncManChannel
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.DisableSyncManChannel) for DisableSyncManChannel
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(.data) for EsmTimeoutCounter
+    ecatslv.o(i.AL_ControlInd) refers to mailbox.o(.data) for bMbxRunning
+    ecatslv.o(i.AL_ControlInd) refers to ecatslv.o(i.SetALStatus) for SetALStatus
+    ecatslv.o(i.AL_ControlRes) refers to ssc-device1.o(i.APPL_StopMailboxHandler) for APPL_StopMailboxHandler
+    ecatslv.o(i.AL_ControlRes) refers to mailbox.o(i.MBX_StopMailboxHandler) for MBX_StopMailboxHandler
+    ecatslv.o(i.AL_ControlRes) refers to ssc-device1.o(i.APPL_StopInputHandler) for APPL_StopInputHandler
+    ecatslv.o(i.AL_ControlRes) refers to ecatslv.o(i.StopInputHandler) for StopInputHandler
+    ecatslv.o(i.AL_ControlRes) refers to ssc-device1.o(i.APPL_StopOutputHandler) for APPL_StopOutputHandler
+    ecatslv.o(i.AL_ControlRes) refers to ecatslv.o(i.StopOutputHandler) for StopOutputHandler
+    ecatslv.o(i.AL_ControlRes) refers to ssc-device1.o(i.APPL_StartMailboxHandler) for APPL_StartMailboxHandler
+    ecatslv.o(i.AL_ControlRes) refers to ssc-device1.o(i.APPL_StartInputHandler) for APPL_StartInputHandler
+    ecatslv.o(i.AL_ControlRes) refers to ssc-device1.o(i.APPL_StartOutputHandler) for APPL_StartOutputHandler
+    ecatslv.o(i.AL_ControlRes) refers to ecatslv.o(i.SetALStatus) for SetALStatus
+    ecatslv.o(i.AL_ControlRes) refers to ecatslv.o(.data) for bEcatWaitForAlControlRes
+    ecatslv.o(i.AL_ControlRes) refers to mailbox.o(.data) for bMbxRunning
+    ecatslv.o(i.BackToInitTransition) refers to objdef.o(.data) for bSyncSetByUser
+    ecatslv.o(i.CheckIfEcatError) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.CheckIfEcatError) refers to ecatslv.o(i.AL_ControlInd) for AL_ControlInd
+    ecatslv.o(i.CheckIfEcatError) refers to ecatslv.o(.data) for EcatWdValue
+    ecatslv.o(i.CheckSmSettings) refers to ecatslv.o(i.GetSyncMan) for GetSyncMan
+    ecatslv.o(i.CheckSmSettings) refers to ecatslv.o(.data) for nMaxEscAddress
+    ecatslv.o(i.DC_CheckWatchdog) refers to ecatslv.o(.data) for bDcSyncActive
+    ecatslv.o(i.DC_CheckWatchdog) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatslv.o(i.DC_CheckWatchdog) refers to objdef.o(.data) for sErrorSettings
+    ecatslv.o(i.DisableSyncManChannel) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    ecatslv.o(i.DisableSyncManChannel) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.ECAT_Init) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.ECAT_Init) refers to ecatslv.o(i.UpdateEEPROMLoadedState) for UpdateEEPROMLoadedState
+    ecatslv.o(i.ECAT_Init) refers to ecatslv.o(i.DisableSyncManChannel) for DisableSyncManChannel
+    ecatslv.o(i.ECAT_Init) refers to mailbox.o(i.MBX_Init) for MBX_Init
+    ecatslv.o(i.ECAT_Init) refers to ecatslv.o(i.SetALStatus) for SetALStatus
+    ecatslv.o(i.ECAT_Init) refers to ecatcoe.o(i.COE_Init) for COE_Init
+    ecatslv.o(i.ECAT_Init) refers to ecatslv.o(i.ResetALEventMask) for ResetALEventMask
+    ecatslv.o(i.ECAT_Init) refers to ecatslv.o(.data) for nMaxSyncMan
+    ecatslv.o(i.ECAT_Main) refers to mailbox.o(i.MBX_Main) for MBX_Main
+    ecatslv.o(i.ECAT_Main) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.ECAT_Main) refers to el9800hw.o(i.HW_GetALEventRegister) for HW_GetALEventRegister
+    ecatslv.o(i.ECAT_Main) refers to ecatslv.o(i.AL_ControlInd) for AL_ControlInd
+    ecatslv.o(i.ECAT_Main) refers to ecatslv.o(i.AL_ControlRes) for AL_ControlRes
+    ecatslv.o(i.ECAT_Main) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    ecatslv.o(i.ECAT_Main) refers to mailbox.o(i.MBX_MailboxReadInd) for MBX_MailboxReadInd
+    ecatslv.o(i.ECAT_Main) refers to mailbox.o(i.MBX_MailboxRepeatReq) for MBX_MailboxRepeatReq
+    ecatslv.o(i.ECAT_Main) refers to mailbox.o(i.MBX_CheckAndCopyMailbox) for MBX_CheckAndCopyMailbox
+    ecatslv.o(i.ECAT_Main) refers to mailbox.o(.data) for bMbxRunning
+    ecatslv.o(i.ECAT_Main) refers to ecatslv.o(.data) for bEcatWaitForAlControlRes
+    ecatslv.o(i.ECAT_StateChange) refers to ssc-device1.o(i.APPL_StopMailboxHandler) for APPL_StopMailboxHandler
+    ecatslv.o(i.ECAT_StateChange) refers to mailbox.o(i.MBX_StopMailboxHandler) for MBX_StopMailboxHandler
+    ecatslv.o(i.ECAT_StateChange) refers to ssc-device1.o(i.APPL_StopInputHandler) for APPL_StopInputHandler
+    ecatslv.o(i.ECAT_StateChange) refers to ecatslv.o(i.StopInputHandler) for StopInputHandler
+    ecatslv.o(i.ECAT_StateChange) refers to ssc-device1.o(i.APPL_StopOutputHandler) for APPL_StopOutputHandler
+    ecatslv.o(i.ECAT_StateChange) refers to ecatslv.o(i.StopOutputHandler) for StopOutputHandler
+    ecatslv.o(i.ECAT_StateChange) refers to ecatslv.o(i.SetALEventMask) for SetALEventMask
+    ecatslv.o(i.ECAT_StateChange) refers to ecatslv.o(i.SetALStatus) for SetALStatus
+    ecatslv.o(i.ECAT_StateChange) refers to ecatslv.o(i.AL_ControlInd) for AL_ControlInd
+    ecatslv.o(i.ECAT_StateChange) refers to ecatslv.o(.data) for bEcatWaitForAlControlRes
+    ecatslv.o(i.ECAT_StateChange) refers to mailbox.o(.data) for bMbxRunning
+    ecatslv.o(i.EnableSyncManChannel) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    ecatslv.o(i.EnableSyncManChannel) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.GetSyncMan) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.GetSyncMan) refers to ecatslv.o(.data) for SyncManInfo
+    ecatslv.o(i.ResetALEventMask) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.ResetALEventMask) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    ecatslv.o(i.SetALEventMask) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.SetALEventMask) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    ecatslv.o(i.SetALStatus) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    ecatslv.o(i.SetALStatus) refers to ecatslv.o(.data) for nAlStatus
+    ecatslv.o(i.StartInputHandler) refers to ecatslv.o(i.GetSyncMan) for GetSyncMan
+    ecatslv.o(i.StartInputHandler) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.StartInputHandler) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatslv.o(i.StartInputHandler) refers to ecatslv.o(.data) for u16ALEventMask
+    ecatslv.o(i.StartInputHandler) refers to mailbox.o(.data) for u16EscAddrSendMbx
+    ecatslv.o(i.StartInputHandler) refers to objdef.o(.data) for bSyncSetByUser
+    ecatslv.o(i.StartInputHandler) refers to ecatslv.o(i.EnableSyncManChannel) for EnableSyncManChannel
+    ecatslv.o(i.StartInputHandler) refers to ecatappl.o(i.PDO_InputMapping) for PDO_InputMapping
+    ecatslv.o(i.StartOutputHandler) refers to ecatslv.o(.data) for bLocalErrorFlag
+    ecatslv.o(i.StartOutputHandler) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatslv.o(i.StopInputHandler) refers to ecatslv.o(i.DisableSyncManChannel) for DisableSyncManChannel
+    ecatslv.o(i.StopInputHandler) refers to ecatslv.o(i.ResetALEventMask) for ResetALEventMask
+    ecatslv.o(i.StopInputHandler) refers to ecatslv.o(.data) for nPdOutputSize
+    ecatslv.o(i.StopInputHandler) refers to objdef.o(.bss) for sSyncManOutPar
+    ecatslv.o(i.StopInputHandler) refers to objdef.o(.data) for bSyncSetByUser
+    ecatslv.o(i.StopOutputHandler) refers to ecatslv.o(.data) for bEcatFirstOutputsReceived
+    ecatslv.o(i.UpdateEEPROMLoadedState) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    ecatslv.o(i.UpdateEEPROMLoadedState) refers to ecatslv.o(.data) for EepromLoaded
+    el9800hw.o(i.AddressingEsc) refers to at32f435_437_gpio.o(i.gpio_bits_reset) for gpio_bits_reset
+    el9800hw.o(i.AddressingEsc) refers to el9800hw.o(i.RxTxSpiData) for RxTxSpiData
+    el9800hw.o(i.AddressingEsc) refers to el9800hw.o(.data) for EscALEvent
+    el9800hw.o(i.GetInterruptRegister) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    el9800hw.o(i.HW_EscRead) refers to el9800hw.o(i.AddressingEsc) for AddressingEsc
+    el9800hw.o(i.HW_EscRead) refers to el9800hw.o(i.RxTxSpiData) for RxTxSpiData
+    el9800hw.o(i.HW_EscRead) refers to at32f435_437_gpio.o(i.gpio_bits_set) for gpio_bits_set
+    el9800hw.o(i.HW_EscReadIsr) refers to el9800hw.o(i.AddressingEsc) for AddressingEsc
+    el9800hw.o(i.HW_EscReadIsr) refers to el9800hw.o(i.RxTxSpiData) for RxTxSpiData
+    el9800hw.o(i.HW_EscReadIsr) refers to at32f435_437_gpio.o(i.gpio_bits_set) for gpio_bits_set
+    el9800hw.o(i.HW_EscWrite) refers to el9800hw.o(i.AddressingEsc) for AddressingEsc
+    el9800hw.o(i.HW_EscWrite) refers to el9800hw.o(i.RxTxSpiData) for RxTxSpiData
+    el9800hw.o(i.HW_EscWrite) refers to at32f435_437_gpio.o(i.gpio_bits_set) for gpio_bits_set
+    el9800hw.o(i.HW_EscWriteIsr) refers to el9800hw.o(i.AddressingEsc) for AddressingEsc
+    el9800hw.o(i.HW_EscWriteIsr) refers to el9800hw.o(i.RxTxSpiData) for RxTxSpiData
+    el9800hw.o(i.HW_EscWriteIsr) refers to at32f435_437_gpio.o(i.gpio_bits_set) for gpio_bits_set
+    el9800hw.o(i.HW_GetALEventRegister) refers to el9800hw.o(i.GetInterruptRegister) for GetInterruptRegister
+    el9800hw.o(i.HW_GetALEventRegister) refers to el9800hw.o(.data) for EscALEvent
+    el9800hw.o(i.HW_GetALEventRegister_Isr) refers to el9800hw.o(i.ISR_GetInterruptRegister) for ISR_GetInterruptRegister
+    el9800hw.o(i.HW_GetALEventRegister_Isr) refers to el9800hw.o(.data) for EscALEvent
+    el9800hw.o(i.HW_Init) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    el9800hw.o(i.HW_Init) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    el9800hw.o(i.ISR_GetInterruptRegister) refers to el9800hw.o(i.HW_EscReadIsr) for HW_EscReadIsr
+    el9800hw.o(i.RxTxSpiData) refers to at32f435_437_spi.o(i.spi_i2s_flag_get) for spi_i2s_flag_get
+    el9800hw.o(i.RxTxSpiData) refers to at32f435_437_spi.o(i.spi_i2s_data_transmit) for spi_i2s_data_transmit
+    el9800hw.o(i.RxTxSpiData) refers to at32f435_437_spi.o(i.spi_i2s_data_receive) for spi_i2s_data_receive
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to malloc.o(i.malloc) for malloc
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to mailbox.o(i.MBX_MailboxSendReq) for MBX_MailboxSendReq
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to malloc.o(i.free) for free
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to mailbox.o(i.MBX_MailboxWriteInd) for MBX_MailboxWriteInd
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to mailbox.o(.data) for u16EscAddrReceiveMbx
+    mailbox.o(i.MBX_CheckAndCopyMailbox) refers to ecatslv.o(.data) for u16dummy
+    mailbox.o(i.MBX_CopyToSendMailbox) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    mailbox.o(i.MBX_CopyToSendMailbox) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    mailbox.o(i.MBX_CopyToSendMailbox) refers to memcpya.o(.text) for __aeabi_memcpy
+    mailbox.o(i.MBX_CopyToSendMailbox) refers to ecatslv.o(.data) for nAlStatus
+    mailbox.o(i.MBX_CopyToSendMailbox) refers to mailbox.o(.data) for bMbxRunning
+    mailbox.o(i.MBX_Init) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    mailbox.o(i.MBX_Init) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    mailbox.o(i.MBX_Init) refers to mailbox.o(.data) for u16ReceiveMbxSize
+    mailbox.o(i.MBX_Init) refers to mailbox.o(.bss) for sMbxReceiveQueue
+    mailbox.o(i.MBX_MailboxReadInd) refers to malloc.o(i.free) for free
+    mailbox.o(i.MBX_MailboxReadInd) refers to mailbox.o(i.MBX_CopyToSendMailbox) for MBX_CopyToSendMailbox
+    mailbox.o(i.MBX_MailboxReadInd) refers to mailbox.o(i.GetOutOfMbxQueue) for GetOutOfMbxQueue
+    mailbox.o(i.MBX_MailboxReadInd) refers to ecatcoe.o(i.COE_ContinueInd) for COE_ContinueInd
+    mailbox.o(i.MBX_MailboxReadInd) refers to mailbox.o(.data) for bSendMbxIsFull
+    mailbox.o(i.MBX_MailboxReadInd) refers to mailbox.o(.bss) for sMbxSendQueue
+    mailbox.o(i.MBX_MailboxRepeatReq) refers to ecatslv.o(i.DisableSyncManChannel) for DisableSyncManChannel
+    mailbox.o(i.MBX_MailboxRepeatReq) refers to ecatslv.o(i.EnableSyncManChannel) for EnableSyncManChannel
+    mailbox.o(i.MBX_MailboxRepeatReq) refers to mailbox.o(i.MBX_CopyToSendMailbox) for MBX_CopyToSendMailbox
+    mailbox.o(i.MBX_MailboxRepeatReq) refers to mailbox.o(.data) for psRepeatMbx
+    mailbox.o(i.MBX_MailboxSendReq) refers to mailbox.o(i.MBX_CopyToSendMailbox) for MBX_CopyToSendMailbox
+    mailbox.o(i.MBX_MailboxSendReq) refers to mailbox.o(i.PutInMbxQueue) for PutInMbxQueue
+    mailbox.o(i.MBX_MailboxSendReq) refers to ecatslv.o(.data) for nAlStatus
+    mailbox.o(i.MBX_MailboxSendReq) refers to mailbox.o(.data) for u8MbxReadCounter
+    mailbox.o(i.MBX_MailboxSendReq) refers to mailbox.o(.bss) for sMbxSendQueue
+    mailbox.o(i.MBX_MailboxWriteInd) refers to mailbox.o(i.MBX_MailboxSendReq) for MBX_MailboxSendReq
+    mailbox.o(i.MBX_MailboxWriteInd) refers to mailbox.o(i.PutInMbxQueue) for PutInMbxQueue
+    mailbox.o(i.MBX_MailboxWriteInd) refers to malloc.o(i.free) for free
+    mailbox.o(i.MBX_MailboxWriteInd) refers to mailbox.o(.data) for u8MbxWriteCounter
+    mailbox.o(i.MBX_MailboxWriteInd) refers to mailbox.o(.bss) for sMbxReceiveQueue
+    mailbox.o(i.MBX_Main) refers to mailbox.o(i.GetOutOfMbxQueue) for GetOutOfMbxQueue
+    mailbox.o(i.MBX_Main) refers to mailbox.o(i.MailboxServiceInd) for MailboxServiceInd
+    mailbox.o(i.MBX_Main) refers to mailbox.o(i.MBX_MailboxSendReq) for MBX_MailboxSendReq
+    mailbox.o(i.MBX_Main) refers to mailbox.o(i.MBX_CheckAndCopyMailbox) for MBX_CheckAndCopyMailbox
+    mailbox.o(i.MBX_Main) refers to mailbox.o(.bss) for sMbxReceiveQueue
+    mailbox.o(i.MBX_Main) refers to mailbox.o(.data) for bReceiveMbxIsLocked
+    mailbox.o(i.MBX_StartMailboxHandler) refers to ecatslv.o(i.GetSyncMan) for GetSyncMan
+    mailbox.o(i.MBX_StartMailboxHandler) refers to ecatslv.o(i.EnableSyncManChannel) for EnableSyncManChannel
+    mailbox.o(i.MBX_StartMailboxHandler) refers to malloc.o(i.malloc) for malloc
+    mailbox.o(i.MBX_StartMailboxHandler) refers to malloc.o(i.free) for free
+    mailbox.o(i.MBX_StartMailboxHandler) refers to mailbox.o(.data) for u16ReceiveMbxSize
+    mailbox.o(i.MBX_StopMailboxHandler) refers to ecatslv.o(i.DisableSyncManChannel) for DisableSyncManChannel
+    mailbox.o(i.MBX_StopMailboxHandler) refers to malloc.o(i.free) for free
+    mailbox.o(i.MBX_StopMailboxHandler) refers to sdoserv.o(i.SODS_ClearPendingResponse) for SODS_ClearPendingResponse
+    mailbox.o(i.MBX_StopMailboxHandler) refers to el9800hw.o(i.HW_EscRead) for HW_EscRead
+    mailbox.o(i.MBX_StopMailboxHandler) refers to el9800hw.o(i.HW_EscWrite) for HW_EscWrite
+    mailbox.o(i.MBX_StopMailboxHandler) refers to mailbox.o(i.GetOutOfMbxQueue) for GetOutOfMbxQueue
+    mailbox.o(i.MBX_StopMailboxHandler) refers to mailbox.o(.data) for bMbxRunning
+    mailbox.o(i.MBX_StopMailboxHandler) refers to mailbox.o(.bss) for sMbxReceiveQueue
+    mailbox.o(i.MailboxServiceInd) refers to ecatcoe.o(i.COE_ServiceInd) for COE_ServiceInd
+    objdef.o(i.CheckSyncTypeValue) refers to ecatslv.o(.data) for nPdOutputSize
+    objdef.o(i.CheckSyncTypeValue) refers to objdef.o(.bss) for sSyncManOutPar
+    objdef.o(i.OBJ_GetDesc) refers to strlen.o(.text) for strlen
+    objdef.o(i.OBJ_GetDesc) refers to memcpya.o(.text) for __aeabi_memcpy
+    objdef.o(i.OBJ_GetDesc) refers to objdef.o(i.OBJ_CopyNumberToString) for OBJ_CopyNumberToString
+    objdef.o(i.OBJ_GetDesc) refers to objdef.o(.data) for aSubindexDesc
+    objdef.o(i.OBJ_GetNoOfObjects) refers to coeappl.o(i.COE_GetObjectDictionary) for COE_GetObjectDictionary
+    objdef.o(i.OBJ_GetNoOfObjects) refers to objdef.o(i.OBJ_GetEntryDesc) for OBJ_GetEntryDesc
+    objdef.o(i.OBJ_GetObjectHandle) refers to coeappl.o(i.COE_GetObjectDictionary) for COE_GetObjectDictionary
+    objdef.o(i.OBJ_GetObjectList) refers to coeappl.o(i.COE_GetObjectDictionary) for COE_GetObjectDictionary
+    objdef.o(i.OBJ_GetObjectList) refers to objdef.o(i.OBJ_GetEntryDesc) for OBJ_GetEntryDesc
+    objdef.o(i.OBJ_GetObjectList) refers to sdoserv.o(.data) for pSdoInfoObjEntry
+    objdef.o(i.OBJ_Read) refers to objdef.o(i.OBJ_GetEntryDesc) for OBJ_GetEntryDesc
+    objdef.o(i.OBJ_Read) refers to memcpya.o(.text) for __aeabi_memcpy
+    objdef.o(i.OBJ_Read) refers to objdef.o(i.OBJ_GetEntryOffset) for OBJ_GetEntryOffset
+    objdef.o(i.OBJ_Read) refers to ecatslv.o(.data) for nAlStatus
+    objdef.o(i.OBJ_Read) refers to objdef.o(.constdata) for cBitMask
+    objdef.o(i.OBJ_Write) refers to objdef.o(i.OBJ_GetEntryDesc) for OBJ_GetEntryDesc
+    objdef.o(i.OBJ_Write) refers to objdef.o(i.OBJ_GetEntryOffset) for OBJ_GetEntryOffset
+    objdef.o(i.OBJ_Write) refers to objdef.o(i.CheckSyncTypeValue) for CheckSyncTypeValue
+    objdef.o(i.OBJ_Write) refers to memcpya.o(.text) for __aeabi_memcpy
+    objdef.o(i.OBJ_Write) refers to ecatslv.o(.data) for nAlStatus
+    objdef.o(i.OBJ_Write) refers to objdef.o(.constdata) for cBitMask
+    objdef.o(i.OBJ_Write) refers to objdef.o(.data) for bSyncSetByUser
+    objdef.o(i.OBJ_Write) refers to objdef.o(.bss) for sSyncManOutPar
+    sdoserv.o(i.SDOS_SdoInd) refers to objdef.o(i.OBJ_GetObjectHandle) for OBJ_GetObjectHandle
+    sdoserv.o(i.SDOS_SdoInd) refers to objdef.o(i.OBJ_GetObjectLength) for OBJ_GetObjectLength
+    sdoserv.o(i.SDOS_SdoInd) refers to malloc.o(i.free) for free
+    sdoserv.o(i.SDOS_SdoInd) refers to malloc.o(i.malloc) for malloc
+    sdoserv.o(i.SDOS_SdoInd) refers to objdef.o(i.OBJ_Read) for OBJ_Read
+    sdoserv.o(i.SDOS_SdoInd) refers to memcpya.o(.text) for __aeabi_memcpy
+    sdoserv.o(i.SDOS_SdoInd) refers to objdef.o(i.OBJ_Write) for OBJ_Write
+    sdoserv.o(i.SDOS_SdoInd) refers to sdoserv.o(i.SdoDownloadSegmentInd) for SdoDownloadSegmentInd
+    sdoserv.o(i.SDOS_SdoInd) refers to sdoserv.o(i.SdoUploadSegmentInd) for SdoUploadSegmentInd
+    sdoserv.o(i.SDOS_SdoInd) refers to sdoserv.o(i.SdoRes) for SdoRes
+    sdoserv.o(i.SDOS_SdoInd) refers to sdoserv.o(.data) for bSdoInWork
+    sdoserv.o(i.SDOS_SdoInd) refers to mailbox.o(.data) for u16SendMbxSize
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to memcpya.o(.text) for __aeabi_memcpy4
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(i.OBJ_GetNoOfObjects) for OBJ_GetNoOfObjects
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(i.OBJ_GetObjectList) for OBJ_GetObjectList
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(i.OBJ_GetObjectHandle) for OBJ_GetObjectHandle
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(i.OBJ_GetObjDesc) for OBJ_GetObjDesc
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(i.OBJ_GetDesc) for OBJ_GetDesc
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(i.OBJ_GetEntryDesc) for OBJ_GetEntryDesc
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to mailbox.o(i.MBX_MailboxSendReq) for MBX_MailboxSendReq
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to sdoserv.o(.bss) for aSdoInfoHeader
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to sdoserv.o(.data) for nSdoInfoFragmentsLeft
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to mailbox.o(.data) for u16SendMbxSize
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to objdef.o(.data) for aSubindexDesc
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to sdoserv.o(.constdata) for cAbortCode
+    sdoserv.o(i.SDOS_SdoInfoInd) refers to ecatcoe.o(.data) for pCoeSendStored
+    sdoserv.o(i.SDOS_SdoRes) refers to memcpya.o(.text) for __aeabi_memcpy
+    sdoserv.o(i.SDOS_SdoRes) refers to sdoserv.o(i.SdoRes) for SdoRes
+    sdoserv.o(i.SDOS_SdoRes) refers to sdoserv.o(.data) for bSdoInWork
+    sdoserv.o(i.SDOS_SdoRes) refers to mailbox.o(.data) for u16SendMbxSize
+    sdoserv.o(i.SODS_ClearPendingResponse) refers to malloc.o(i.free) for free
+    sdoserv.o(i.SODS_ClearPendingResponse) refers to sdoserv.o(.data) for bSdoInWork
+    sdoserv.o(i.SODS_ClearPendingResponse) refers to mailbox.o(.data) for psRepeatMbx
+    sdoserv.o(i.SdoDownloadSegmentInd) refers to memcpya.o(.text) for __aeabi_memcpy
+    sdoserv.o(i.SdoDownloadSegmentInd) refers to objdef.o(i.OBJ_Write) for OBJ_Write
+    sdoserv.o(i.SdoDownloadSegmentInd) refers to malloc.o(i.free) for free
+    sdoserv.o(i.SdoDownloadSegmentInd) refers to sdoserv.o(.data) for bSdoSegLastToggle
+    sdoserv.o(i.SdoDownloadSegmentInd) refers to mailbox.o(.data) for u16ReceiveMbxSize
+    sdoserv.o(i.SdoRes) refers to mailbox.o(i.MBX_MailboxSendReq) for MBX_MailboxSendReq
+    sdoserv.o(i.SdoRes) refers to sdoserv.o(.constdata) for cAbortCode
+    sdoserv.o(i.SdoRes) refers to ecatcoe.o(.data) for pCoeSendStored
+    sdoserv.o(i.SdoUploadSegmentInd) refers to memcpya.o(.text) for __aeabi_memcpy
+    sdoserv.o(i.SdoUploadSegmentInd) refers to malloc.o(i.free) for free
+    sdoserv.o(i.SdoUploadSegmentInd) refers to sdoserv.o(.data) for bSdoSegLastToggle
+    sdoserv.o(i.SdoUploadSegmentInd) refers to mailbox.o(.data) for u16SendMbxSize
+    ssc-device1.o(i.APPL_GenerateMapping) refers to objdef.o(i.OBJ_GetObjectHandle) for OBJ_GetObjectHandle
+    ssc-device1.o(i.APPL_GenerateMapping) refers to objdef.o(i.OBJ_GetEntryOffset) for OBJ_GetEntryOffset
+    ssc-device1.o(i.APPL_GenerateMapping) refers to ssc-device1.o(.data) for sRxPDOassign
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to startup_at32f435_437.o(HEAP) for __heap_base
+    mallocr.o(i.__free$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.__malloc$realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocr.o(i.__malloc$realloc) refers to startup_at32f435_437.o(HEAP) for __heap_base
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocr.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.realloc) refers to mallocr.o(i.__free$realloc) for __free$realloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.__malloc$realloc) for __malloc$realloc
+    mallocr.o(i.realloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to startup_at32f435_437.o(HEAP) for __heap_base
+    malloca.o(i.__free$memalign) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__malloc$memalign) refers to malloca.o(i.__aligned_malloc) for __aligned_malloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocra.o(i.__aligned_malloc$realloc) refers to startup_at32f435_437.o(HEAP) for __heap_base
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__free$realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__malloc$realloc$memalign) refers to mallocra.o(i.__aligned_malloc$realloc) for __aligned_malloc$realloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__free$realloc$memalign) for __free$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__malloc$realloc$memalign) for __malloc$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_at32f435_437.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_at32f435_437.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing at32f435_437_int.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_int.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_int.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_wk_config.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_wk_config.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_wk_config.o(.rrx_text), (6 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing wk_system.o(.rev16_text), (4 bytes).
+    Removing wk_system.o(.revsh_text), (4 bytes).
+    Removing wk_system.o(.rrx_text), (6 bytes).
+    Removing wk_system.o(i.wk_delay_ms), (42 bytes).
+    Removing wk_system.o(i.wk_delay_us), (56 bytes).
+    Removing wk_exint.o(.rev16_text), (4 bytes).
+    Removing wk_exint.o(.revsh_text), (4 bytes).
+    Removing wk_exint.o(.rrx_text), (6 bytes).
+    Removing wk_spi.o(.rev16_text), (4 bytes).
+    Removing wk_spi.o(.revsh_text), (4 bytes).
+    Removing wk_spi.o(.rrx_text), (6 bytes).
+    Removing wk_tmr.o(.rev16_text), (4 bytes).
+    Removing wk_tmr.o(.revsh_text), (4 bytes).
+    Removing wk_tmr.o(.rrx_text), (6 bytes).
+    Removing wk_gpio.o(.rev16_text), (4 bytes).
+    Removing wk_gpio.o(.revsh_text), (4 bytes).
+    Removing wk_gpio.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_acc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_acc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_acc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_acc.o(i.acc_calibration_mode_enable), (48 bytes).
+    Removing at32f435_437_acc.o(i.acc_flag_clear), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_flag_get), (32 bytes).
+    Removing at32f435_437_acc.o(i.acc_hickcal_get), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_hicktrim_get), (16 bytes).
+    Removing at32f435_437_acc.o(i.acc_interrupt_enable), (36 bytes).
+    Removing at32f435_437_acc.o(i.acc_interrupt_flag_get), (72 bytes).
+    Removing at32f435_437_acc.o(i.acc_read_c1), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_read_c2), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_read_c3), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_sof_select), (16 bytes).
+    Removing at32f435_437_acc.o(i.acc_step_set), (20 bytes).
+    Removing at32f435_437_acc.o(i.acc_write_c1), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_write_c2), (12 bytes).
+    Removing at32f435_437_acc.o(i.acc_write_c3), (12 bytes).
+    Removing at32f435_437_adc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_adc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_adc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_adc.o(i.adc_base_config), (44 bytes).
+    Removing at32f435_437_adc.o(i.adc_base_default_para_init), (14 bytes).
+    Removing at32f435_437_adc.o(i.adc_calibration_init), (12 bytes).
+    Removing at32f435_437_adc.o(i.adc_calibration_init_status_get), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_calibration_start), (12 bytes).
+    Removing at32f435_437_adc.o(i.adc_calibration_status_get), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_calibration_value_set), (6 bytes).
+    Removing at32f435_437_adc.o(i.adc_combine_mode_get), (16 bytes).
+    Removing at32f435_437_adc.o(i.adc_combine_mode_set), (24 bytes).
+    Removing at32f435_437_adc.o(i.adc_combine_ordinary_conversion_data_get), (12 bytes).
+    Removing at32f435_437_adc.o(i.adc_common_config), (164 bytes).
+    Removing at32f435_437_adc.o(i.adc_common_default_para_init), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_conversion_stop), (12 bytes).
+    Removing at32f435_437_adc.o(i.adc_conversion_stop_status_get), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_dma_mode_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_dma_request_repeat_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_flag_clear), (6 bytes).
+    Removing at32f435_437_adc.o(i.adc_flag_get), (16 bytes).
+    Removing at32f435_437_adc.o(i.adc_interrupt_enable), (22 bytes).
+    Removing at32f435_437_adc.o(i.adc_interrupt_flag_get), (108 bytes).
+    Removing at32f435_437_adc.o(i.adc_occe_each_conversion_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_channel_set), (168 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_conversion_data_get), (8 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_conversion_trigger_set), (52 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_oversample_enable), (14 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_oversample_restart_set), (14 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_oversample_trig_enable), (14 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_part_count_set), (12 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_part_mode_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_software_trigger_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_ordinary_software_trigger_status_get), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_oversample_ratio_shift_set), (22 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_auto_mode_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_channel_length_set), (12 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_channel_set), (142 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_conversion_data_get), (50 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_conversion_trigger_set), (52 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_offset_value_set), (62 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_oversample_enable), (14 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_part_mode_enable), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_software_trigger_enable), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_preempt_software_trigger_status_get), (18 bytes).
+    Removing at32f435_437_adc.o(i.adc_reset), (24 bytes).
+    Removing at32f435_437_adc.o(i.adc_resolution_set), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_voltage_battery_enable), (24 bytes).
+    Removing at32f435_437_adc.o(i.adc_voltage_monitor_enable), (32 bytes).
+    Removing at32f435_437_adc.o(i.adc_voltage_monitor_single_channel_select), (10 bytes).
+    Removing at32f435_437_adc.o(i.adc_voltage_monitor_threshold_value_set), (18 bytes).
+    Removing at32f435_437_can.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_can.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_can.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_can.o(i.can_base_init), (188 bytes).
+    Removing at32f435_437_can.o(i.can_baudrate_default_para_init), (16 bytes).
+    Removing at32f435_437_can.o(i.can_baudrate_set), (146 bytes).
+    Removing at32f435_437_can.o(i.can_debug_transmission_prohibit), (10 bytes).
+    Removing at32f435_437_can.o(i.can_default_para_init), (18 bytes).
+    Removing at32f435_437_can.o(i.can_doze_mode_enter), (74 bytes).
+    Removing at32f435_437_can.o(i.can_doze_mode_exit), (44 bytes).
+    Removing at32f435_437_can.o(i.can_error_type_record_get), (12 bytes).
+    Removing at32f435_437_can.o(i.can_filter_default_para_init), (22 bytes).
+    Removing at32f435_437_can.o(i.can_filter_init), (356 bytes).
+    Removing at32f435_437_can.o(i.can_flag_clear), (124 bytes).
+    Removing at32f435_437_can.o(i.can_flag_get), (240 bytes).
+    Removing at32f435_437_can.o(i.can_interrupt_enable), (18 bytes).
+    Removing at32f435_437_can.o(i.can_interrupt_flag_get), (260 bytes).
+    Removing at32f435_437_can.o(i.can_message_receive), (240 bytes).
+    Removing at32f435_437_can.o(i.can_message_transmit), (312 bytes).
+    Removing at32f435_437_can.o(i.can_operating_mode_set), (222 bytes).
+    Removing at32f435_437_can.o(i.can_receive_error_counter_get), (10 bytes).
+    Removing at32f435_437_can.o(i.can_receive_fifo_release), (26 bytes).
+    Removing at32f435_437_can.o(i.can_receive_message_pending_get), (34 bytes).
+    Removing at32f435_437_can.o(i.can_reset), (68 bytes).
+    Removing at32f435_437_can.o(i.can_transmit_cancel), (60 bytes).
+    Removing at32f435_437_can.o(i.can_transmit_error_counter_get), (12 bytes).
+    Removing at32f435_437_can.o(i.can_transmit_status_get), (108 bytes).
+    Removing at32f435_437_can.o(i.can_ttc_mode_enable), (50 bytes).
+    Removing at32f435_437_crc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_crc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_crc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_crc.o(i.crc_block_calculate), (36 bytes).
+    Removing at32f435_437_crc.o(i.crc_common_data_get), (12 bytes).
+    Removing at32f435_437_crc.o(i.crc_common_data_set), (20 bytes).
+    Removing at32f435_437_crc.o(i.crc_data_get), (12 bytes).
+    Removing at32f435_437_crc.o(i.crc_data_reset), (20 bytes).
+    Removing at32f435_437_crc.o(i.crc_init_data_set), (12 bytes).
+    Removing at32f435_437_crc.o(i.crc_one_word_calculate), (16 bytes).
+    Removing at32f435_437_crc.o(i.crc_poly_size_get), (16 bytes).
+    Removing at32f435_437_crc.o(i.crc_poly_size_set), (20 bytes).
+    Removing at32f435_437_crc.o(i.crc_poly_value_get), (12 bytes).
+    Removing at32f435_437_crc.o(i.crc_poly_value_set), (12 bytes).
+    Removing at32f435_437_crc.o(i.crc_reverse_input_data_set), (20 bytes).
+    Removing at32f435_437_crc.o(i.crc_reverse_output_data_set), (20 bytes).
+    Removing at32f435_437_crm.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_crm.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_crm.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_crm.o(i.crm_battery_powered_domain_reset), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_clkout_div_set), (68 bytes).
+    Removing at32f435_437_crm.o(i.crm_clkout_to_tmr10_enable), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_clock_failure_detection_enable), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_clock_out1_set), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_clock_out2_set), (56 bytes).
+    Removing at32f435_437_crm.o(i.crm_emac_output_pulse_set), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_ertc_clock_enable), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_ertc_clock_select), (36 bytes).
+    Removing at32f435_437_crm.o(i.crm_flag_clear), (236 bytes).
+    Removing at32f435_437_crm.o(i.crm_hext_bypass), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_hext_stable_wait), (46 bytes).
+    Removing at32f435_437_crm.o(i.crm_hick_clock_calibration_set), (48 bytes).
+    Removing at32f435_437_crm.o(i.crm_hick_clock_trimming_set), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_hick_divider_select), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_hick_sclk_frequency_select), (28 bytes).
+    Removing at32f435_437_crm.o(i.crm_interrupt_enable), (32 bytes).
+    Removing at32f435_437_crm.o(i.crm_interrupt_flag_get), (180 bytes).
+    Removing at32f435_437_crm.o(i.crm_lext_bypass), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_periph_lowpower_mode_enable), (76 bytes).
+    Removing at32f435_437_crm.o(i.crm_periph_reset), (76 bytes).
+    Removing at32f435_437_crm.o(i.crm_pll_parameter_calculate), (232 bytes).
+    Removing at32f435_437_crm.o(i.crm_usb_clock_div_set), (20 bytes).
+    Removing at32f435_437_crm.o(i.crm_usb_clock_source_select), (32 bytes).
+    Removing at32f435_437_dac.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_dac.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_dac.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_dac.o(i.dac_1_data_set), (4 bytes).
+    Removing at32f435_437_dac.o(i.dac_2_data_set), (4 bytes).
+    Removing at32f435_437_dac.o(i.dac_data_output_get), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_dma_enable), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_dual_data_set), (52 bytes).
+    Removing at32f435_437_dac.o(i.dac_dual_software_trigger_generate), (20 bytes).
+    Removing at32f435_437_dac.o(i.dac_enable), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_mask_amplitude_select), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_output_buffer_enable), (60 bytes).
+    Removing at32f435_437_dac.o(i.dac_reset), (24 bytes).
+    Removing at32f435_437_dac.o(i.dac_software_trigger_generate), (52 bytes).
+    Removing at32f435_437_dac.o(i.dac_trigger_enable), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_trigger_select), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_udr_enable), (48 bytes).
+    Removing at32f435_437_dac.o(i.dac_udr_flag_clear), (40 bytes).
+    Removing at32f435_437_dac.o(i.dac_udr_flag_get), (52 bytes).
+    Removing at32f435_437_dac.o(i.dac_udr_interrupt_flag_get), (92 bytes).
+    Removing at32f435_437_dac.o(i.dac_wave_generate), (48 bytes).
+    Removing at32f435_437_debug.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_debug.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_debug.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_debug.o(i.debug_apb1_periph_mode_set), (32 bytes).
+    Removing at32f435_437_debug.o(i.debug_apb2_periph_mode_set), (32 bytes).
+    Removing at32f435_437_debug.o(i.debug_device_id_get), (12 bytes).
+    Removing at32f435_437_debug.o(i.debug_low_power_mode_set), (32 bytes).
+    Removing at32f435_437_dma.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_dma.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_dma.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_dma.o(i.dma_channel_enable), (10 bytes).
+    Removing at32f435_437_dma.o(i.dma_data_number_get), (8 bytes).
+    Removing at32f435_437_dma.o(i.dma_data_number_set), (4 bytes).
+    Removing at32f435_437_dma.o(i.dma_default_para_init), (24 bytes).
+    Removing at32f435_437_dma.o(i.dma_flag_clear), (32 bytes).
+    Removing at32f435_437_dma.o(i.dma_flag_get), (44 bytes).
+    Removing at32f435_437_dma.o(i.dma_flexible_config), (24 bytes).
+    Removing at32f435_437_dma.o(i.dma_init), (98 bytes).
+    Removing at32f435_437_dma.o(i.dma_interrupt_enable), (18 bytes).
+    Removing at32f435_437_dma.o(i.dma_interrupt_flag_get), (44 bytes).
+    Removing at32f435_437_dma.o(i.dma_reset), (112 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_enable), (14 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_generator_config), (44 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_generator_default_para_init), (12 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_generator_flag_clear), (6 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_generator_flag_get), (18 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_generator_interrupt_enable), (26 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_generator_interrupt_flag_get), (172 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_init), (10 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_sync_config), (54 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_sync_default_para_init), (14 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_sync_flag_clear), (6 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_sync_flag_get), (18 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_sync_interrupt_enable), (26 bytes).
+    Removing at32f435_437_dma.o(i.dmamux_sync_interrupt_flag_get), (172 bytes).
+    Removing at32f435_437_dvp.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_dvp.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_dvp.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_basic_frame_rate_control_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_basic_status_get), (28 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_capture_enable), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_capture_mode_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_dma_burst_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_enable), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_enhanced_data_format_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_enhanced_framerate_set), (52 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_enhanced_scaling_resize_enable), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_enhanced_scaling_resize_set), (52 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_flag_clear), (16 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_flag_get), (28 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_hsync_polarity_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_input_data_unused_set), (28 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_interrupt_enable), (32 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_interrupt_flag_get), (24 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_jpeg_enable), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_monochrome_image_binarization_set), (28 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_pclk_polarity_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_pixel_data_length_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_reset), (24 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_sync_code_set), (24 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_sync_event_interrupt_set), (28 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_sync_mode_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_sync_unmask_set), (24 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_vsync_polarity_set), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_window_crop_enable), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_window_crop_set), (40 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_zoomout_select), (20 bytes).
+    Removing at32f435_437_dvp.o(i.dvp_zoomout_set), (52 bytes).
+    Removing at32f435_437_edma.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_edma.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_edma.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_edma.o(i.edma_2d_enable), (60 bytes).
+    Removing at32f435_437_edma.o(i.edma_2d_init), (18 bytes).
+    Removing at32f435_437_edma.o(i.edma_data_number_get), (8 bytes).
+    Removing at32f435_437_edma.o(i.edma_data_number_set), (4 bytes).
+    Removing at32f435_437_edma.o(i.edma_default_para_init), (32 bytes).
+    Removing at32f435_437_edma.o(i.edma_double_buffer_mode_enable), (26 bytes).
+    Removing at32f435_437_edma.o(i.edma_double_buffer_mode_init), (28 bytes).
+    Removing at32f435_437_edma.o(i.edma_fifo_status_get), (10 bytes).
+    Removing at32f435_437_edma.o(i.edma_flag_clear), (28 bytes).
+    Removing at32f435_437_edma.o(i.edma_flag_get), (36 bytes).
+    Removing at32f435_437_edma.o(i.edma_flow_controller_enable), (10 bytes).
+    Removing at32f435_437_edma.o(i.edma_init), (124 bytes).
+    Removing at32f435_437_edma.o(i.edma_interrupt_enable), (48 bytes).
+    Removing at32f435_437_edma.o(i.edma_interrupt_flag_get), (36 bytes).
+    Removing at32f435_437_edma.o(i.edma_link_list_enable), (60 bytes).
+    Removing at32f435_437_edma.o(i.edma_link_list_init), (4 bytes).
+    Removing at32f435_437_edma.o(i.edma_memory_addr_set), (10 bytes).
+    Removing at32f435_437_edma.o(i.edma_memory_target_get), (10 bytes).
+    Removing at32f435_437_edma.o(i.edma_peripheral_inc_offset_set), (10 bytes).
+    Removing at32f435_437_edma.o(i.edma_reset), (176 bytes).
+    Removing at32f435_437_edma.o(i.edma_stream_enable), (10 bytes).
+    Removing at32f435_437_edma.o(i.edma_stream_status_get), (18 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_enable), (24 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_generator_config), (44 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_generator_default_para_init), (12 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_generator_flag_clear), (12 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_generator_flag_get), (24 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_generator_interrupt_enable), (26 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_generator_interrupt_flag_get), (84 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_init), (10 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_sync_config), (54 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_sync_default_para_init), (14 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_sync_flag_clear), (12 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_sync_flag_get), (24 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_sync_interrupt_enable), (26 bytes).
+    Removing at32f435_437_edma.o(i.edmamux_sync_interrupt_flag_get), (148 bytes).
+    Removing at32f435_437_emac.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_emac.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_emac.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_ertc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_ertc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_ertc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_enable), (84 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_get), (120 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_mask_set), (52 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_set), (132 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_sub_second_get), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_sub_second_set), (72 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_alarm_week_date_select), (52 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_bcd_to_num), (20 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_bpr_data_read), (28 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_bpr_data_write), (24 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_cal_output_enable), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_cal_output_select), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_calendar_get), (112 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_coarse_calibration_enable), (48 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_coarse_calibration_set), (60 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_date_set), (120 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_daylight_bpr_get), (16 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_daylight_set), (68 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_direct_read_enable), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_divider_set), (60 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_flag_clear), (28 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_flag_get), (24 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_hour_mode_set), (48 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_init_mode_enter), (60 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_init_mode_exit), (16 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_interrupt_enable), (92 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_interrupt_flag_get), (144 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_interrupt_get), (48 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_num_to_bcd), (36 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_output_set), (60 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_refer_clock_detect_enable), (48 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_reset), (128 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_smooth_calibration_config), (112 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_sub_second_get), (20 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_1_pin_select), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_detect_freq_set), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_enable), (48 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_filter_set), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_precharge_set), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_pull_up_enable), (40 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_timestamp_enable), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_tamper_valid_edge_set), (48 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_time_adjust), (92 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_time_set), (120 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_timestamp_enable), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_timestamp_get), (108 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_timestamp_pin_select), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_timestamp_sub_second_get), (12 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_timestamp_valid_edge_set), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_wait_flag), (38 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_wait_update), (56 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_wakeup_clock_set), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_wakeup_counter_get), (12 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_wakeup_counter_set), (32 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_wakeup_enable), (52 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_write_protect_disable), (16 bytes).
+    Removing at32f435_437_ertc.o(i.ertc_write_protect_enable), (12 bytes).
+    Removing at32f435_437_exint.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_exint.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_exint.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_exint.o(i.exint_event_enable), (32 bytes).
+    Removing at32f435_437_exint.o(i.exint_flag_get), (28 bytes).
+    Removing at32f435_437_exint.o(i.exint_interrupt_enable), (32 bytes).
+    Removing at32f435_437_exint.o(i.exint_reset), (40 bytes).
+    Removing at32f435_437_exint.o(i.exint_software_interrupt_event_generate), (16 bytes).
+    Removing at32f435_437_flash.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_flash.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_flash.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank1_erase), (60 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank1_lock), (20 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank1_operation_status_get), (52 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank1_operation_wait_for), (36 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank1_unlock), (24 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank2_erase), (60 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank2_lock), (20 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank2_operation_status_get), (52 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank2_operation_wait_for), (36 bytes).
+    Removing at32f435_437_flash.o(i.flash_bank2_unlock), (24 bytes).
+    Removing at32f435_437_flash.o(i.flash_block_erase), (156 bytes).
+    Removing at32f435_437_flash.o(i.flash_byte_program), (132 bytes).
+    Removing at32f435_437_flash.o(i.flash_continue_read_enable), (20 bytes).
+    Removing at32f435_437_flash.o(i.flash_crc_calibrate), (64 bytes).
+    Removing at32f435_437_flash.o(i.flash_eopb0_config), (100 bytes).
+    Removing at32f435_437_flash.o(i.flash_epp_set), (352 bytes).
+    Removing at32f435_437_flash.o(i.flash_epp_status_get), (20 bytes).
+    Removing at32f435_437_flash.o(i.flash_fap_enable), (168 bytes).
+    Removing at32f435_437_flash.o(i.flash_fap_status_get), (16 bytes).
+    Removing at32f435_437_flash.o(i.flash_flag_clear), (44 bytes).
+    Removing at32f435_437_flash.o(i.flash_flag_get), (80 bytes).
+    Removing at32f435_437_flash.o(i.flash_halfword_program), (132 bytes).
+    Removing at32f435_437_flash.o(i.flash_internal_all_erase), (116 bytes).
+    Removing at32f435_437_flash.o(i.flash_interrupt_enable), (88 bytes).
+    Removing at32f435_437_flash.o(i.flash_lock), (40 bytes).
+    Removing at32f435_437_flash.o(i.flash_nzw_boost_enable), (20 bytes).
+    Removing at32f435_437_flash.o(i.flash_operation_status_get), (52 bytes).
+    Removing at32f435_437_flash.o(i.flash_operation_wait_for), (36 bytes).
+    Removing at32f435_437_flash.o(i.flash_sector_erase), (156 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_disable), (52 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_enable), (152 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_end_sector_get), (12 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_inststart_sector_get), (12 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_remaining_count_get), (16 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_start_sector_get), (12 bytes).
+    Removing at32f435_437_flash.o(i.flash_slib_state_get), (24 bytes).
+    Removing at32f435_437_flash.o(i.flash_ssb_set), (100 bytes).
+    Removing at32f435_437_flash.o(i.flash_ssb_status_get), (16 bytes).
+    Removing at32f435_437_flash.o(i.flash_unlock), (36 bytes).
+    Removing at32f435_437_flash.o(i.flash_user_system_data_erase), (164 bytes).
+    Removing at32f435_437_flash.o(i.flash_user_system_data_program), (116 bytes).
+    Removing at32f435_437_flash.o(i.flash_word_program), (132 bytes).
+    Removing at32f435_437_flash.o(.constdata), (8 bytes).
+    Removing at32f435_437_gpio.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_gpio.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_gpio.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_bits_toggle), (20 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_bits_write), (10 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_input_data_bit_read), (18 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_input_data_read), (8 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_output_data_bit_read), (18 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_output_data_read), (8 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_pin_wp_config), (18 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_pins_huge_driven_config), (18 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_port_write), (4 bytes).
+    Removing at32f435_437_gpio.o(i.gpio_reset), (256 bytes).
+    Removing at32f435_437_i2c.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_i2c.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_i2c.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_ack_enable), (18 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_addr10_header_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_addr10_mode_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_auto_stop_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_clock_stretch_enable), (18 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_cnt_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_data_receive), (8 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_data_send), (4 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_dma_enable), (22 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_ext_timeout_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_ext_timeout_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_flag_clear), (4 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_flag_get), (16 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_general_call_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_init), (20 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_interrupt_enable), (18 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_interrupt_flag_get), (190 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_interrupt_get), (16 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_matched_addr_get), (12 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_own_address1_set), (30 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_own_address2_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_own_address2_set), (22 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_pec_calculate_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_pec_transmit_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_pec_value_get), (8 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_reload_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_reset), (100 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_slave_data_ctrl_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_smbus_alert_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_smbus_enable), (34 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_start_generate), (14 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_stop_generate), (14 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_timeout_detcet_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_timeout_enable), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_timeout_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_transfer_addr_get), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_transfer_addr_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_transfer_dir_get), (18 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_transfer_dir_set), (10 bytes).
+    Removing at32f435_437_i2c.o(i.i2c_transmit_set), (32 bytes).
+    Removing at32f435_437_misc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_misc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_misc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_misc.o(i.nvic_irq_disable), (44 bytes).
+    Removing at32f435_437_misc.o(i.nvic_lowpower_mode_config), (32 bytes).
+    Removing at32f435_437_misc.o(i.nvic_system_reset), (44 bytes).
+    Removing at32f435_437_misc.o(i.nvic_vector_table_set), (20 bytes).
+    Removing at32f435_437_pwc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_pwc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_pwc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_battery_powered_domain_access), (20 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_deep_sleep_mode_enter), (48 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_flag_clear), (48 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_flag_get), (24 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_power_voltage_monitor_enable), (20 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_pvm_level_select), (20 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_reset), (24 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_sleep_mode_enter), (36 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_standby_mode_enter), (56 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_voltage_regulate_set), (20 bytes).
+    Removing at32f435_437_pwc.o(i.pwc_wakeup_pin_enable), (32 bytes).
+    Removing at32f435_437_qspi.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_qspi.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_qspi.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_auto_ispc_enable), (56 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_busy_config), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_byte_read), (8 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_byte_write), (6 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_clk_division_set), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_cmd_operation_kick), (76 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_dma_enable), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_dma_rx_threshold_set), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_dma_tx_threshold_set), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_encryption_enable), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_flag_clear), (4 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_flag_get), (48 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_half_word_read), (8 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_half_word_write), (6 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_interrupt_enable), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_interrupt_flag_get), (34 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_reset), (68 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_sck_mode_set), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_word_read), (8 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_word_write), (6 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_xip_cache_bypass_set), (10 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_xip_enable), (124 bytes).
+    Removing at32f435_437_qspi.o(i.qspi_xip_init), (90 bytes).
+    Removing at32f435_437_scfg.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_scfg.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_scfg.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_scfg.o(i.scfg_emac_interface_set), (20 bytes).
+    Removing at32f435_437_scfg.o(i.scfg_infrared_config), (28 bytes).
+    Removing at32f435_437_scfg.o(i.scfg_mem_map_set), (20 bytes).
+    Removing at32f435_437_scfg.o(i.scfg_pins_ultra_driven_enable), (76 bytes).
+    Removing at32f435_437_scfg.o(i.scfg_reset), (24 bytes).
+    Removing at32f435_437_scfg.o(i.scfg_xmc_mapping_swap_set), (20 bytes).
+    Removing at32f435_437_sdio.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_sdio.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_sdio.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_buffer_counter_get), (6 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_bus_width_config), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_clock_bypass), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_clock_config), (30 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_clock_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_command_config), (56 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_command_response_get), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_command_state_machine_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_data_config), (56 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_data_counter_get), (6 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_data_read), (8 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_data_state_machine_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_data_write), (6 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_dma_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_flag_clear), (4 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_flag_get), (20 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_flow_control_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_interrupt_enable), (20 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_interrupt_flag_get), (20 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_io_function_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_io_suspend_command_set), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_power_saving_mode_enable), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_power_set), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_power_status_get), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_read_wait_mode_set), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_read_wait_start), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_read_wait_stop), (10 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_reset), (28 bytes).
+    Removing at32f435_437_sdio.o(i.sdio_response_get), (42 bytes).
+    Removing at32f435_437_spi.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_spi.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_spi.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_spi.o(i.i2s_default_para_init), (22 bytes).
+    Removing at32f435_437_spi.o(i.i2s_enable), (10 bytes).
+    Removing at32f435_437_spi.o(i.i2s_init), (550 bytes).
+    Removing at32f435_437_spi.o(i.spi_crc_enable), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_crc_next_transmit), (14 bytes).
+    Removing at32f435_437_spi.o(i.spi_crc_polynomial_get), (8 bytes).
+    Removing at32f435_437_spi.o(i.spi_crc_polynomial_set), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_crc_value_get), (18 bytes).
+    Removing at32f435_437_spi.o(i.spi_frame_bit_num_set), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_half_duplex_direction_set), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_hardware_cs_output_enable), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_i2s_dma_receiver_enable), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_i2s_dma_transmitter_enable), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_i2s_flag_clear), (58 bytes).
+    Removing at32f435_437_spi.o(i.spi_i2s_interrupt_enable), (18 bytes).
+    Removing at32f435_437_spi.o(i.spi_i2s_interrupt_flag_get), (186 bytes).
+    Removing at32f435_437_spi.o(i.spi_i2s_reset), (132 bytes).
+    Removing at32f435_437_spi.o(i.spi_software_cs_internal_level_set), (10 bytes).
+    Removing at32f435_437_spi.o(i.spi_ti_mode_enable), (10 bytes).
+    Removing at32f435_437_tmr.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_tmr.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_tmr.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_32_bit_function_enable), (28 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_brkdt_config), (72 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_brkdt_default_para_init), (18 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_channel1_input_select), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_channel_buffer_enable), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_channel_dma_select), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_channel_enable), (96 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_channel_value_get), (50 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_channel_value_set), (46 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_clock_source_div_set), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_counter_value_get), (6 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_counter_value_set), (4 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_div_value_get), (6 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_div_value_set), (4 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_dma_control_config), (18 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_dma_request_enable), (22 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_encoder_mode_config), (86 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_event_sw_trigger), (8 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_external_clock_config), (28 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_external_clock_mode1_config), (44 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_external_clock_mode2_config), (36 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_flag_get), (18 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_force_output_set), (76 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_hall_select), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_input_channel_divider_set), (66 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_input_channel_filter_set), (66 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_input_channel_init), (304 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_input_default_para_init), (16 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_internal_clock_set), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_iremap_config), (36 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_one_cycle_mode_enable), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_channel_buffer_enable), (76 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_channel_config), (482 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_channel_immediately_set), (76 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_channel_mode_select), (76 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_channel_polarity_set), (96 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_channel_switch_set), (76 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_default_para_init), (18 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_output_enable), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_overflow_event_disable), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_overflow_request_source_set), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_period_value_get), (6 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_period_value_set), (4 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_pwm_input_config), (382 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_repetition_counter_set), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_reset), (480 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_sub_mode_select), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_sub_sync_mode_set), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_trgout2_enable), (10 bytes).
+    Removing at32f435_437_tmr.o(i.tmr_trigger_input_select), (10 bytes).
+    Removing at32f435_437_usart.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_usart.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_usart.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_usart.o(i.usart_break_bit_num_set), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_break_send), (12 bytes).
+    Removing at32f435_437_usart.o(i.usart_clock_config), (28 bytes).
+    Removing at32f435_437_usart.o(i.usart_clock_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_data_receive), (8 bytes).
+    Removing at32f435_437_usart.o(i.usart_data_transmit), (8 bytes).
+    Removing at32f435_437_usart.o(i.usart_de_polarity_set), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_dma_receiver_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_dma_transmitter_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_flag_clear), (18 bytes).
+    Removing at32f435_437_usart.o(i.usart_flag_get), (16 bytes).
+    Removing at32f435_437_usart.o(i.usart_hardware_flow_control_set), (102 bytes).
+    Removing at32f435_437_usart.o(i.usart_id_bit_num_set), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_init), (172 bytes).
+    Removing at32f435_437_usart.o(i.usart_interrupt_enable), (54 bytes).
+    Removing at32f435_437_usart.o(i.usart_interrupt_flag_get), (176 bytes).
+    Removing at32f435_437_usart.o(i.usart_irda_low_power_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_irda_mode_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_irda_smartcard_division_set), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_lin_mode_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_parity_selection_config), (76 bytes).
+    Removing at32f435_437_usart.o(i.usart_receiver_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_receiver_mute_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_reset), (228 bytes).
+    Removing at32f435_437_usart.o(i.usart_rs485_delay_time_config), (18 bytes).
+    Removing at32f435_437_usart.o(i.usart_rs485_mode_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_single_line_halfduplex_select), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_smartcard_guard_time_set), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_smartcard_mode_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_smartcard_nack_set), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_transmit_receive_pin_swap), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_transmitter_enable), (10 bytes).
+    Removing at32f435_437_usart.o(i.usart_wakeup_id_set), (46 bytes).
+    Removing at32f435_437_usart.o(i.usart_wakeup_mode_set), (10 bytes).
+    Removing at32f435_437_usb.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_usb.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_usb.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_usb.o(i.usb_connect), (18 bytes).
+    Removing at32f435_437_usb.o(i.usb_disconnect), (20 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept0_setup), (34 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept0_start), (44 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_clear_stall), (146 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_close), (258 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_in_clear), (12 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_in_interrupt), (44 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_open), (438 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_out_clear), (12 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_out_interrupt), (22 bytes).
+    Removing at32f435_437_usb.o(i.usb_ept_stall), (146 bytes).
+    Removing at32f435_437_usb.o(i.usb_flush_rx_fifo), (44 bytes).
+    Removing at32f435_437_usb.o(i.usb_flush_tx_fifo), (56 bytes).
+    Removing at32f435_437_usb.o(i.usb_get_all_in_interrupt), (18 bytes).
+    Removing at32f435_437_usb.o(i.usb_get_all_out_interrupt), (18 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_clear_interrupt), (4 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_get_all_interrupt), (10 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_init), (24 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_interrupt_enable), (20 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_power_on), (36 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_reset), (76 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_select_core), (20 bytes).
+    Removing at32f435_437_usb.o(i.usb_global_set_mode), (68 bytes).
+    Removing at32f435_437_usb.o(i.usb_hc_enable), (284 bytes).
+    Removing at32f435_437_usb.o(i.usb_hch_halt), (236 bytes).
+    Removing at32f435_437_usb.o(i.usb_hch_read_interrupt), (12 bytes).
+    Removing at32f435_437_usb.o(i.usb_host_disable), (92 bytes).
+    Removing at32f435_437_usb.o(i.usb_interrupt_disable), (10 bytes).
+    Removing at32f435_437_usb.o(i.usb_interrupt_enable), (12 bytes).
+    Removing at32f435_437_usb.o(i.usb_open_phy_clk), (14 bytes).
+    Removing at32f435_437_usb.o(i.usb_port_power_on), (36 bytes).
+    Removing at32f435_437_usb.o(i.usb_read_packet), (42 bytes).
+    Removing at32f435_437_usb.o(i.usb_remote_wkup_clear), (18 bytes).
+    Removing at32f435_437_usb.o(i.usb_remote_wkup_set), (20 bytes).
+    Removing at32f435_437_usb.o(i.usb_set_address), (14 bytes).
+    Removing at32f435_437_usb.o(i.usb_set_rx_fifo), (4 bytes).
+    Removing at32f435_437_usb.o(i.usb_set_tx_fifo), (66 bytes).
+    Removing at32f435_437_usb.o(i.usb_stop_phy_clk), (16 bytes).
+    Removing at32f435_437_usb.o(i.usb_suspend_status_get), (14 bytes).
+    Removing at32f435_437_usb.o(i.usb_write_packet), (48 bytes).
+    Removing at32f435_437_usb.o(i.usbh_fsls_clksel), (34 bytes).
+    Removing at32f435_437_usb.o(i.usbh_get_frame), (12 bytes).
+    Removing at32f435_437_wdt.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_wdt.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_wdt.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_counter_reload), (16 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_divider_set), (20 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_enable), (16 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_flag_get), (24 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_register_write_enable), (24 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_reload_value_set), (12 bytes).
+    Removing at32f435_437_wdt.o(i.wdt_window_counter_set), (20 bytes).
+    Removing at32f435_437_wwdt.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_wwdt.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_wwdt.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_counter_set), (20 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_divider_set), (20 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_enable), (16 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_flag_clear), (12 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_flag_get), (16 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_interrupt_enable), (24 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_interrupt_flag_get), (36 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_reset), (24 bytes).
+    Removing at32f435_437_wwdt.o(i.wwdt_window_counter_set), (20 bytes).
+    Removing at32f435_437_xmc.o(.rev16_text), (4 bytes).
+    Removing at32f435_437_xmc.o(.revsh_text), (4 bytes).
+    Removing at32f435_437_xmc.o(.rrx_text), (6 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_ecc_get), (24 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_ext_timing_config), (44 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_flag_clear), (128 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_flag_status_get), (64 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_interrupt_enable), (164 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_interrupt_flag_status_get), (316 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_default_para_init), (18 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_ecc_enable), (44 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_enable), (44 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_init), (56 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_reset), (64 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_timing_config), (80 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nand_timing_default_para_init), (30 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nor_sram_enable), (22 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nor_sram_init), (90 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nor_sram_reset), (56 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_nor_sram_timing_config), (124 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_norsram_default_para_init), (42 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_norsram_timing_default_para_init), (56 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_pccard_default_para_init), (10 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_pccard_enable), (24 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_pccard_init), (28 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_pccard_reset), (40 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_pccard_timing_config), (84 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_pccard_timing_default_para_init), (44 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_auto_refresh_set), (24 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_cmd), (28 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_default_para_init), (50 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_init), (608 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_refresh_counter_set), (24 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_reset), (52 bytes).
+    Removing at32f435_437_xmc.o(i.xmc_sdram_status_get), (28 bytes).
+    Removing system_at32f435_437.o(.rev16_text), (4 bytes).
+    Removing system_at32f435_437.o(.revsh_text), (4 bytes).
+    Removing system_at32f435_437.o(.rrx_text), (6 bytes).
+    Removing coeappl.o(.rev16_text), (4 bytes).
+    Removing coeappl.o(.revsh_text), (4 bytes).
+    Removing coeappl.o(.rrx_text), (6 bytes).
+    Removing ecatappl.o(.rev16_text), (4 bytes).
+    Removing ecatappl.o(.revsh_text), (4 bytes).
+    Removing ecatappl.o(.rrx_text), (6 bytes).
+    Removing ecatappl.o(i.Sync0_Isr), (308 bytes).
+    Removing ecatappl.o(i.Sync1_Isr), (60 bytes).
+    Removing ecatcoe.o(.rev16_text), (4 bytes).
+    Removing ecatcoe.o(.revsh_text), (4 bytes).
+    Removing ecatcoe.o(.rrx_text), (6 bytes).
+    Removing ecatslv.o(.rev16_text), (4 bytes).
+    Removing ecatslv.o(.revsh_text), (4 bytes).
+    Removing ecatslv.o(.rrx_text), (6 bytes).
+    Removing ecatslv.o(i.ECAT_StateChange), (324 bytes).
+    Removing el9800hw.o(.rev16_text), (4 bytes).
+    Removing el9800hw.o(.revsh_text), (4 bytes).
+    Removing el9800hw.o(.rrx_text), (6 bytes).
+    Removing el9800hw.o(i.HW_Release), (2 bytes).
+    Removing mailbox.o(.rev16_text), (4 bytes).
+    Removing mailbox.o(.revsh_text), (4 bytes).
+    Removing mailbox.o(.rrx_text), (6 bytes).
+    Removing objdef.o(.rev16_text), (4 bytes).
+    Removing objdef.o(.revsh_text), (4 bytes).
+    Removing objdef.o(.rrx_text), (6 bytes).
+    Removing sdoserv.o(.rev16_text), (4 bytes).
+    Removing sdoserv.o(.revsh_text), (4 bytes).
+    Removing sdoserv.o(.rrx_text), (6 bytes).
+    Removing ssc-device1.o(.rev16_text), (4 bytes).
+    Removing ssc-device1.o(.revsh_text), (4 bytes).
+    Removing ssc-device1.o(.rrx_text), (6 bytes).
+
+807 unused section(s) (total 31358 bytes) removed from the image.
