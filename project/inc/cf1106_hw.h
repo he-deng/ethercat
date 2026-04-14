@@ -16,6 +16,11 @@
 #define UINT8  UINT8
 #define BOOL   uint8_t
 
+/* 补充 SSC 的内存地址类型定义 (解决所有 Error #20 和 #29) */
+#ifndef MEM_ADDR
+#define MEM_ADDR uint8_t
+#endif
+
 /* ========================================================================
    2. 基础 SPI 读写接口声明
    ======================================================================== */
@@ -27,6 +32,10 @@ void HW_EscWrite(MEM_ADDR *pData, uint16_t Address, uint16_t Len);
 /* ========================================================================
    3. SSC 协议栈要求的底层数据访问宏
    ======================================================================== */
+/* 块读写宏 (补充 Isr 后缀，解决 Warning #223-D) */
+#define HW_EscReadIsr(pData, Address, Len)       HW_EscRead((MEM_ADDR *)(pData), (Address), (Len))
+#define HW_EscWriteIsr(pData, Address, Len)      HW_EscWrite((MEM_ADDR *)(pData), (Address), (Len))
+
 /* 8/16/32 位读取宏 */
 #define HW_EscReadByte(WordValue, Address)       HW_EscRead((MEM_ADDR *)&(WordValue), (Address), 1)
 #define HW_EscReadWord(WordValue, Address)       HW_EscRead((MEM_ADDR *)&(WordValue), (Address), 2)
@@ -71,4 +80,3 @@ extern uint32_t ecat_timer_inc_p_ms;
 #define ECAT_TIMER_INC_P_MS                      1  /* 定时器 1 个 Tick 为 1ms */
 
 #endif /* _CF1106_HW_H_ */
-// （注意：确保最后这里有一行空行，消除 "last line of file ends without a newline" 警告）
