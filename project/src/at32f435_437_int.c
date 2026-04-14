@@ -30,7 +30,11 @@
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 #include "ecat_def.h"
-#include "ecatslv.h"
+#include "cf1106_hw.h"
+
+extern void PDI_Isr(void);
+extern void Sync0_Isr(void);
+extern void ECAT_CheckTimer(void);
 
 /* add user code end private includes */
 
@@ -304,6 +308,7 @@ void EXINT9_5_IRQHandler(void)
 void TMR7_GLOBAL_IRQHandler(void)
 {
   /* add user code begin TMR7_GLOBAL_IRQ 0 */
+	ecat_timer_inc_p_ms++;
 	ECAT_CheckTimer();
 
   /* add user code end TMR7_GLOBAL_IRQ 0 */

@@ -2,6 +2,8 @@
 #include "wk_spi.h"
 #include "wk_gpio.h"
 
+uint32_t ecat_timer_inc_p_ms = 0;
+
 /* 假设 CF1106 的 SPI CS 引脚连接在 PA4 (请根据你的硬件原理图修改) */
 #define ESC_CS_LOW()    gpio_bits_reset(GPIOA, GPIO_PINS_4)
 #define ESC_CS_HIGH()   gpio_bits_set(GPIOA, GPIO_PINS_4)
