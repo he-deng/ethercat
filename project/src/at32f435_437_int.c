@@ -29,6 +29,8 @@
 
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
+#include "ecat_def.h"
+#include "ecatslv.h"
 
 /* add user code end private includes */
 
@@ -235,6 +237,7 @@ void EXINT0_IRQHandler(void)
   {
     /* add user code begin EXINT_LINE_0 */
     /* clear flag */
+		Sync0_Isr();
     exint_flag_clear(EXINT_LINE_0);
     /* add user code end EXINT_LINE_0 */ 
   }
@@ -283,6 +286,7 @@ void EXINT9_5_IRQHandler(void)
   {
     /* add user code begin EXINT_LINE_5 */
     /* clear flag */
+		PDI_Isr();
     exint_flag_clear(EXINT_LINE_5);
     /* add user code end EXINT_LINE_5 */ 
   }
@@ -300,6 +304,7 @@ void EXINT9_5_IRQHandler(void)
 void TMR7_GLOBAL_IRQHandler(void)
 {
   /* add user code begin TMR7_GLOBAL_IRQ 0 */
+	ECAT_CheckTimer();
 
   /* add user code end TMR7_GLOBAL_IRQ 0 */
 
