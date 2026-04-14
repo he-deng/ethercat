@@ -41,7 +41,8 @@ V5.01 : Start file change log
 
 #include "ecat_def.h"
 
-#include "el9800hw.h"
+#include  "esc.h"
+"at32_hw.h"
 
 #ifndef _ECATSLV_H_
 #define _ECATSLV_H_
@@ -329,6 +330,13 @@ V5.01 : Start file change log
 
 
 
+#define    LED_OFF                      0x00 /**< \brief LED off*/
+#define    LED_FLICKERING               0x0E /**< \brief LED flickering*/
+#define    LED_BLINKING                 0x0D /**< \brief LED blinking*/
+#define    LED_SINGLEFLASH              0x01 /**< \brief LED single flash*/
+#define    LED_DOUBLEFLASH              0x02 /**< \brief LED double flash*/
+#define    LED_ON                       0x0F /**< \brief LED on*/
+#define    LED_OVERRIDE                 0x10 /**< \brief LED override (required to force the LED value within the ESC)*/
 
 
 #define    MEMORY_START_ADDRESS            0x1000 /**< \brief ESC DPRAM start address*/
@@ -354,6 +362,7 @@ V5.01 : Start file change log
 ------    Global Variables
 ------
 -----------------------------------------------------------------------------------------*/
+PROTO    BOOL                           bBootMode; /**< \brief Indicates in slave is in BOOT mode*/
 PROTO    BOOL                           bEcatOutputUpdateRunning;  /**< \brief Indicates the OP state, will be set in StartOutputHandler
                                                                                 and reset in StopOutputHandler*/
 
@@ -412,6 +421,9 @@ PROTO BOOL                              bEcatWaitForAlControlRes; /**< \brief Co
 
 PROTO UINT16                            nEcatStateTrans; /**< \brief Current state transition*/
 
+PROTO UINT8                             u8EcatErrorLed; /**< \brief Current value of the error LED*/
+
+PROTO UINT8                             u8EcatRunLed; /**< \brief Current value of the run LED*/
 
 PROTO UINT16                            nPdInputSize; /**< \brief Contains the input size (SM3 size)/SM2 if no outputs are supported, has to be written by the application*/
 

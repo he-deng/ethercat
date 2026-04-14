@@ -39,8 +39,3 @@
 .\objects\at32f435_437_int.o: ..\..\libraries\drivers\inc\at32f435_437_emac.h
 .\objects\at32f435_437_int.o: ..\..\libraries\drivers\inc\at32f435_437_dvp.h
 .\objects\at32f435_437_int.o: ..\..\libraries\drivers\inc\at32f435_437_usb.h
-.\objects\at32f435_437_int.o: ..\ECAT\el9800hw.h
-.\objects\at32f435_437_int.o: ..\ECAT\esc.h
-.\objects\at32f435_437_int.o: ..\ECAT\ecat_def.h
-.\objects\at32f435_437_int.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\at32f435_437_int.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

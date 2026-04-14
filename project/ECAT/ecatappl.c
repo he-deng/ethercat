@@ -138,7 +138,7 @@ V4.00 APPL 6: The main function was split in MainInit and MainLoop
 #include "applInterface.h"
 #undef _APPL_INTERFACE_
 
-#include "SSC-Device1.h"
+#include "cia402appl.h"
 
 
 
@@ -192,8 +192,6 @@ UINT16           aPdInputData[(MAX_PD_INPUT_SIZE>>1)];
     extern VARVOLATILE UINT16    u16dummy;
 
 BOOL bInitFinished = FALSE; /** < \brief indicates if the initialization is finished*/
-
-#define ECAT_TIMER_INC_P_MS  1
 
 /*-----------------------------------------------------------------------------------------
 ------
@@ -676,6 +674,11 @@ UINT16 MainInit(void)
 
 
 
+    pAPPL_FoeRead = NULL;
+    pAPPL_FoeReadData = NULL;
+    pAPPL_FoeError = NULL;
+    pAPPL_FoeWrite = NULL;
+    pAPPL_FoeWriteData = NULL;
 
     pAPPL_MainLoop = NULL;
 /*ECATCHANGE_END(V5.12) ECAT8*/
@@ -843,6 +846,10 @@ void MainLoop(void)
        COE_Main();
        CheckIfEcatError();
 
+    if(bEcatInputUpdateRunning)
+    {
+        CiA402_StateMachine();
+    }
 
 /*ECATCHANGE_START(V5.12) APPL1*/
     if (pAPPL_MainLoop != NULL)
@@ -889,6 +896,10 @@ void ECAT_Application(void)
         }
     }
 
+    /*Axis configuration is written in state change from PREOP to SAFEOP
+    => trigger CiA402 Application if device is in SAFEOP or OP
+    (Motion Controller function is only triggered if DC Synchronisation is active and valid mode of operation is set)*/
+    if(bEcatInputUpdateRunning)
     {
         APPL_Application();
     }

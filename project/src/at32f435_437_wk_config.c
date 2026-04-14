@@ -164,6 +164,12 @@ void wk_periph_clock_config(void)
   /* enable gpiob periph clock */
   crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE);
 
+  /* enable gpioc periph clock */
+  crm_periph_clock_enable(CRM_GPIOC_PERIPH_CLOCK, TRUE);
+
+  /* enable gpioh periph clock */
+  crm_periph_clock_enable(CRM_GPIOH_PERIPH_CLOCK, TRUE);
+
   /* enable tmr7 periph clock */
   crm_periph_clock_enable(CRM_TMR7_PERIPH_CLOCK, TRUE);
 

@@ -37,16 +37,7 @@
 ".\objects\at32f435_437_xmc.o"
 ".\objects\startup_at32f435_437.o"
 ".\objects\system_at32f435_437.o"
-".\objects\coeappl.o"
-".\objects\ecatappl.o"
-".\objects\ecatcoe.o"
-".\objects\ecatslv.o"
-".\objects\el9800hw.o"
-".\objects\mailbox.o"
-".\objects\objdef.o"
-".\objects\sdoserv.o"
-".\objects\ssc-device1.o"
---library_type=microlib --strict --scatter ".\objects\pmc006e3.sct"
+--strict --scatter ".\objects\pmc006e3.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\listings\pmc006e3.map" -o .\objects\pmc006e3.axf

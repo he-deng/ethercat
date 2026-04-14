@@ -122,7 +122,7 @@ V4.00 ECAT 1: The handling of the Sync Manager Parameter was included according 
 
 
 /*Add Application specific Objects*/
-#include "SSC-Device1.h"
+#include "cia402appl.h"
 
 
 #undef _OBJD_

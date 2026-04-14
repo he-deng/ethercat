@@ -194,6 +194,7 @@ V4.00 ECAT 7: The return values for the AL-StatusCode were changed to UINT16
 #include "ecatappl.h"
 
 
+#include    "bootmode.h"
 
 
 
@@ -204,7 +205,7 @@ V4.00 ECAT 7: The return values for the AL-StatusCode were changed to UINT16
 
 
 
-#include "SSC-Device1.h"
+#include "cia402appl.h"
 
 /*--------------------------------------------------------------------------------------
 ------
@@ -1392,6 +1393,59 @@ void SetALStatus(UINT8 alStatus, UINT16 alStatusCode)
     Value = SWAPWORD(Value);
     HW_EscWriteWord(Value,ESC_AL_STATUS_OFFSET);
 
+    /*The Run LED state is set in Set LED Indication, only the Error LED blink code is set here*/
+
+    /*set Error blink code*/
+    if(alStatusCode == 0x00 || !(alStatus & STATE_CHANGE))
+    {
+        u8EcatErrorLed = LED_OFF;
+    }
+    else if((alStatusCode == ALSTATUSCODE_NOSYNCERROR) ||
+        (alStatusCode == ALSTATUSCODE_SYNCERROR) ||
+        (alStatusCode == ALSTATUSCODE_DCPLLSYNCERROR)
+/*ECATCHANGE_START(V5.12) ECAT7*/
+        || (bLocalErrorFlag == TRUE))
+/*ECATCHANGE_END(V5.12) ECAT7*/
+    {
+        u8EcatErrorLed = LED_SINGLEFLASH;
+    }
+    else if((alStatusCode == ALSTATUSCODE_SMWATCHDOG))
+    {
+        u8EcatErrorLed = LED_DOUBLEFLASH;
+    }
+    else
+    {
+        u8EcatErrorLed = LED_BLINKING;
+    }
+    u8EcatErrorLed |= LED_OVERRIDE;
+
+    /*The Run LED registers are also written in 16 or 32 Bit access => calculate value*/
+    switch((alStatus & STATE_MASK))
+    {
+    case STATE_INIT:
+        u8EcatRunLed = LED_OFF;
+        break;
+    case STATE_PREOP:
+        u8EcatRunLed = LED_BLINKING;
+        break;
+    case STATE_SAFEOP:
+        u8EcatRunLed = LED_SINGLEFLASH;
+        break;
+    case STATE_OP:
+        u8EcatRunLed = LED_ON;
+        break;
+    case STATE_BOOT:
+        u8EcatRunLed = LED_FLICKERING;
+        break;
+    }
+
+    u8EcatRunLed |= LED_OVERRIDE;
+
+    {
+    UINT16 TmpVar = 0;
+    TmpVar = SWAPWORD((((UINT16)u8EcatRunLed) | (((UINT16)u8EcatErrorLed)<<8)));
+    HW_EscWriteWord(TmpVar,ESC_RUN_LED_OVERRIDE);
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -1497,14 +1551,72 @@ void AL_ControlInd(UINT8 alControl, UINT16 alStatusCode)
         switch ( stateTrans )
         {
         case INIT_2_BOOT    :
-            result = ALSTATUSCODE_BOOTNOTSUPP;
+            /* if the application has to execute code when going to BOOT this shall be done at this place */
+            bBootMode = TRUE;
+
+            if ( CheckSmSettings(MAILBOX_READ+1) != 0 )
+            {
+                bBootMode = FALSE;
+                result = ALSTATUSCODE_INVALIDMBXCFGINBOOT;
+                break;
+            }
+            /* disable all events in BOOT state */
+            ResetALEventMask(0);
+
+            /* MBX_StartMailboxHandler (in mailbox.c) checks if the areas of the mailbox
+               sync managers SM0 and SM1 overlap each other
+              if result is unequal 0, the slave will stay in INIT
+              and sets the ErrorInd Bit (bit 4) of the AL-Status */
+            result = MBX_StartMailboxHandler();
+            if (result == 0)
+            {
+                bApplEsmPending = FALSE;
+                /* additionally there could be an application specific check (in ecatappl.c)
+                    if the state transition from INIT to BOOT should be done
+                    if result is NOERROR_INWORK, the slave will stay in INIT until timeout 
+                    or transition is complete by AL_ControlRes*/
+            
+                result = APPL_StartMailboxHandler();
+                if ( result == 0 )
+                {
+                    /*transition successful*/
+                    bMbxRunning = TRUE;
+                }
+            }
+
+            if(result != 0 && result != NOERROR_INWORK)
+            {
+                /*Stop APPL Mbx handler if the APPL start handler was called before*/
+                    if (!bApplEsmPending)
+                    {
+                        APPL_StopMailboxHandler();
+                    }
+
+                 MBX_StopMailboxHandler();
+            }
+
+            BL_Start( STATE_BOOT );
+
+            if (result != 0)
+            {
+                bBootMode = FALSE;
+            }
 
 
 
             break;
 
         case BOOT_2_INIT    :
-            result = ALSTATUSCODE_BOOTNOTSUPP;
+            if(bBootMode)
+            {
+                bBootMode = FALSE;
+                /* disable all events in BOOT state */
+                ResetALEventMask(0);
+                MBX_StopMailboxHandler();
+                result = APPL_StopMailboxHandler();
+            }
+
+            BL_Stop();
 
             BackToInitTransition();
 
@@ -1864,6 +1976,10 @@ void AL_ControlInd(UINT8 alControl, UINT16 alStatusCode)
         /* AL-Status has to be updated and AL-Status-Code has to be reset
            if the the error bit was acknowledged */
         SetALStatus(nAlStatus, 0);
+    }
+    if((stateTrans & 0x80) && !(stateTrans & STATE_OP))    //state transition from OP to "not OP"
+    {
+        CiA402_LocalError(ERROR_COMMUNICATION);
     }
 
 }
@@ -2412,6 +2528,7 @@ void ECAT_Init(void)
     MBX_Init();
 
     /* initialize variables */
+    bBootMode = FALSE;
     bApplEsmPending = FALSE;
     bEcatWaitForAlControlRes = FALSE;
     bEcatFirstOutputsReceived = FALSE;
@@ -2435,6 +2552,7 @@ void ECAT_Init(void)
     nAlStatus    = STATE_INIT;
     SetALStatus(nAlStatus, 0);
     nEcatStateTrans = 0;
+    u8EcatErrorLed = LED_OFF;
 
     bEscIntEnabled = FALSE;
 

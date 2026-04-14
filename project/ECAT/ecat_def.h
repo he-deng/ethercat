@@ -20,7 +20,6 @@
 -----------------------------------------------------------------------------------------*/
 #include <stdlib.h>
 #include <string.h>
-#include "at32f435_437.h"
 
 /*-----------------------------------------------------------------------------------------
 ------	
@@ -37,7 +36,7 @@ EL9800_HW: Shall be set if the Slave code is executed on the PIC mounted on the 
 This settings should also be enabled if the ESC is connected via a serial interface and no specific hardware access files are avilable yet.<br>
 NOTE: The PDI type needs also to be configured in the "ESC_CONFIG_DATA". */
 #ifndef EL9800_HW
-#define EL9800_HW                                 1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
+#define EL9800_HW                                 0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
 #endif
 
 /** 
@@ -137,7 +136,7 @@ UC_SET_ECAT_LED: If set the EtherCAT Run and Error LEDs are set by the uControll
 /** 
 ESC_SUPPORT_ECAT_LED: This switch can be enabled if the connected ESC support Error and Run LED indication. See the ESC datasheet if the LED indication is supported. If set UC_SET_ECAT_LED shall be reset. */
 #ifndef ESC_SUPPORT_ECAT_LED
-#define ESC_SUPPORT_ECAT_LED                      0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
+#define ESC_SUPPORT_ECAT_LED                      1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
 #endif
 
 /** 
@@ -203,7 +202,7 @@ EL9800_APPLICATION: Should be set if the Slave Sample Code runs on an EL9800_x E
 /** 
 CiA402_DEVICE: If this switch is set, then the sample implementation of CiA402 device profile will be activated. */
 #ifndef CiA402_DEVICE
-#define CiA402_DEVICE                             0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
+#define CiA402_DEVICE                             1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
 #endif
 
 /** 
@@ -338,7 +337,7 @@ STATIC_ETHERNET_BUFFER: If this switch is set a static buffer is used to store e
 /** 
 FOE_SUPPORTED: If the FoE services should be supported, then this switch shall be set.  */
 #ifndef FOE_SUPPORTED
-#define FOE_SUPPORTED                             0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
+#define FOE_SUPPORTED                             1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
 #endif
 
 /** 
@@ -351,7 +350,7 @@ MAILBOX_SUPPORTED: This switch is set automatically if at least one mailbox prot
 BOOTSTRAPMODE_SUPPORTED: If the firmware update over FoE services should be supported, then this switch shall be set.<br>
 If this switch is set, then also "FOE_SUPPORTED" shall be set.  */
 #ifndef BOOTSTRAPMODE_SUPPORTED
-#define BOOTSTRAPMODE_SUPPORTED                   0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
+#define BOOTSTRAPMODE_SUPPORTED                   1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.0.0)!
 #endif
 
 /** 
@@ -684,7 +683,7 @@ does not support different memory types, OBJSTRCPY shall be defined to a 'normal
 /** 
 MAKE_HUGE_PTR: Should be defined to the initialize a pointer variable with an absolute address */
 #ifndef MAKE_HUGE_PTR
-#define MAKE_HUGE_PTR                             _mkhp
+#define MAKE_HUGE_PTR 
 #endif
 
 /** 
@@ -749,13 +748,13 @@ if the microcontroller does not support different memory types, VARMEM shall be 
 /** 
 MEM_ADDR: Type to access local memory addresses */
 #ifndef MEM_ADDR
-#define MEM_ADDR                                  UINT32
+#define MEM_ADDR                                  UINT16
 #endif
 
 /** 
 GET_MEM_SIZE(ByteSize): Round up the byte size to next matching memory boundary depending on "MEM_ADDR" */
 #ifndef GET_MEM_SIZE
-#define GET_MEM_SIZE(ByteSize)                    (((ByteSize)+3) >> 2)
+#define GET_MEM_SIZE(ByteSize)                    (((ByteSize)+1) >> 1)
 #endif
 
 /** 
@@ -904,43 +903,43 @@ SERIAL_NUMBER: Object 0x1018 SI4 (EtherCAT product serial number) */
 /** 
 DEVICE_PROFILE_TYPE: Slave device type (Object 0x1000)  */
 #ifndef DEVICE_PROFILE_TYPE
-#define DEVICE_PROFILE_TYPE                       0x00001389
+#define DEVICE_PROFILE_TYPE                       0x00000192
 #endif
 
 /** 
 DEVICE_NAME: Name of the slave device (Object 0x1008) */
 #ifndef DEVICE_NAME
-#define DEVICE_NAME                               "SSC-Device"
+#define DEVICE_NAME                               "PMC006E3"
 #endif
 
 /** 
 DEVICE_NAME_LEN: Length of 'DEVICE_NAME' without '\0' */
 #ifndef DEVICE_NAME_LEN
-#define DEVICE_NAME_LEN                           0xA
+#define DEVICE_NAME_LEN                           0x8
 #endif
 
 /** 
 DEVICE_HW_VERSION: Hardware version of the slave device (Object 0x1009) */
 #ifndef DEVICE_HW_VERSION
-#define DEVICE_HW_VERSION                         "n.a."
+#define DEVICE_HW_VERSION                         "0.1"
 #endif
 
 /** 
 DEVICE_HW_VERSION_LEN: Length of 'DEVICE_HW_VERSION' without '\0' */
 #ifndef DEVICE_HW_VERSION_LEN
-#define DEVICE_HW_VERSION_LEN                     0x4
+#define DEVICE_HW_VERSION_LEN                     0x3
 #endif
 
 /** 
 DEVICE_SW_VERSION: Software version of the slave device (Object 0x100A) */
 #ifndef DEVICE_SW_VERSION
-#define DEVICE_SW_VERSION                         "5.12"
+#define DEVICE_SW_VERSION                         "0.1"
 #endif
 
 /** 
 DEVICE_SW_VERSION_LEN: Length of 'DEVICE_SW_VERSION' without '\0' */
 #ifndef DEVICE_SW_VERSION_LEN
-#define DEVICE_SW_VERSION_LEN                     0x4
+#define DEVICE_SW_VERSION_LEN                     0x3
 #endif
 
 /** 
@@ -954,7 +953,7 @@ inside the application memory of the EtherCAT Slave Controller which could be se
 MAX_PD_WRITE_ADDRESS: Maximum address for the process output data (Sync Manager 2)<br>
 inside the application memory of the EtherCAT Slave Controller which could be set by the master. The setting have to be within the ranges of the user memory of the ESC (this is not checked by the tool). */
 #ifndef MAX_PD_WRITE_ADDRESS
-#define MAX_PD_WRITE_ADDRESS                      0x1FFF
+#define MAX_PD_WRITE_ADDRESS                      0x2FFF
 #endif
 
 /** 
@@ -968,7 +967,7 @@ inside the application memory of the EtherCAT Slave Controller which could be se
 MAX_PD_READ_ADDRESS: Maximum address for the process input data (Sync Manager 3)<br>
 inside the application memory of the EtherCAT Slave Controller which could be set by the master. The setting have to be within the ranges of the user memory of the ESC (this is not checked by the tool). */
 #ifndef MAX_PD_READ_ADDRESS
-#define MAX_PD_READ_ADDRESS                       0x1FFF
+#define MAX_PD_READ_ADDRESS                       0x2FFF
 #endif
 
 /** 
@@ -980,7 +979,7 @@ MIN_MBX_SIZE: Minimum mailbox size (Sync Manager 0 and 1) which could be set by 
 /** 
 MAX_MBX_SIZE: Maximum mailbox size (Sync Manager 0 and 1) which could be set by the master. */
 #ifndef MAX_MBX_SIZE
-#define MAX_MBX_SIZE                              0x0080
+#define MAX_MBX_SIZE                              0x0400
 #endif
 
 /** 
@@ -992,7 +991,7 @@ MIN_MBX_WRITE_ADDRESS: Minimum address for the write (receive) mailbox (Sync Man
 /** 
 MAX_MBX_WRITE_ADDRESS: Maximum address for the write (receive) mailbox (Sync Manager 0). The setting have to be within the ranges of the user memory of the ESC (this is not checked by the tool). */
 #ifndef MAX_MBX_WRITE_ADDRESS
-#define MAX_MBX_WRITE_ADDRESS                     0x1FFF
+#define MAX_MBX_WRITE_ADDRESS                     0x2FFF
 #endif
 
 /** 
@@ -1004,13 +1003,13 @@ MAX_PD_INPUT_SIZE: Maximum size of the process input data (Sync Manager 3) for c
 /** 
 MIN_MBX_READ_ADDRESS: Minimum address for the read (send) mailbox (Sync Manager 1). */
 #ifndef MIN_MBX_READ_ADDRESS
-#define MIN_MBX_READ_ADDRESS                      0x1000
+#define MIN_MBX_READ_ADDRESS                      0x1400
 #endif
 
 /** 
 MAX_MBX_READ_ADDRESS: Maximum address for the read (send) mailbox (Sync Manager 1). */
 #ifndef MAX_MBX_READ_ADDRESS
-#define MAX_MBX_READ_ADDRESS                      0x1FFF
+#define MAX_MBX_READ_ADDRESS                      0x2FFF
 #endif
 
 /** 

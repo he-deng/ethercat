@@ -50,8 +50,8 @@ void wk_gpio_config(void)
   /* add user code end gpio_config 1 */
 
   /* gpio output config */
-	gpio_bits_set(GPIOA, GPIO_PINS_0);
-	gpio_bits_set(SPI2_CS_GPIO_PORT, SPI2_CS_PIN);
+  gpio_bits_set(GPIOA, GPIO_PINS_0);
+  gpio_bits_set(SPI2_CS_GPIO_PORT, SPI2_CS_PIN);
 
   gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
   gpio_init_struct.gpio_out_type = GPIO_OUTPUT_PUSH_PULL;
@@ -59,7 +59,6 @@ void wk_gpio_config(void)
   gpio_init_struct.gpio_pins = GPIO_PINS_0;
   gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
   gpio_init(GPIOA, &gpio_init_struct);
-	
 
   gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
   gpio_init_struct.gpio_out_type = GPIO_OUTPUT_PUSH_PULL;
@@ -67,7 +66,30 @@ void wk_gpio_config(void)
   gpio_init_struct.gpio_pins = SPI2_CS_PIN;
   gpio_init_struct.gpio_pull = GPIO_PULL_UP;
   gpio_init(SPI2_CS_GPIO_PORT, &gpio_init_struct);
-	
+
+  /* gpio analog config */
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_13 | GPIO_PINS_14 | GPIO_PINS_15;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOC, &gpio_init_struct);
+
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_0 | GPIO_PINS_1 | GPIO_PINS_3 | GPIO_PINS_2;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOH, &gpio_init_struct);
+
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_1 | GPIO_PINS_2 | GPIO_PINS_3 | GPIO_PINS_4 | GPIO_PINS_5 | 
+                               GPIO_PINS_6 | GPIO_PINS_7 | GPIO_PINS_8 | GPIO_PINS_9 | GPIO_PINS_10 | 
+                               GPIO_PINS_11 | GPIO_PINS_12;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOA, &gpio_init_struct);
+
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_2 | GPIO_PINS_10 | GPIO_PINS_11 | GPIO_PINS_6 | GPIO_PINS_7 | 
+                               GPIO_PINS_8 | GPIO_PINS_9;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOB, &gpio_init_struct);
 
   /* add user code begin gpio_config 2 */
 
