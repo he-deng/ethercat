@@ -85,6 +85,9 @@ int main(void)
   
   /* 1. 初始化 EtherCAT 硬件接口 (SPI, 中断引脚等) */
   HW_Init(); 
+	
+	uint32_t esc_type = 0;
+	HW_EscRead((MEM_ADDR *)&esc_type, 0x0000, 1);
   
   /* 2. 初始化 EtherCAT 协议栈 */
   MainInit();
@@ -97,7 +100,8 @@ int main(void)
   while(1)
   {
     /* add user code begin 3 */
-    
+		PDI_Isr();
+    Sync0_Isr();
     /* 4. EtherCAT 协议栈主循环 */
     MainLoop();
     

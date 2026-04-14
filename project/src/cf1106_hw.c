@@ -5,11 +5,11 @@
 uint32_t ecat_timer_inc_p_ms = 0;
 
 /* 假设 CF1106 的 SPI CS 引脚连接在 PA4 (请根据你的硬件原理图修改) */
-#define ESC_CS_LOW()    gpio_bits_reset(GPIOA, GPIO_PINS_4)
-#define ESC_CS_HIGH()   gpio_bits_set(GPIOA, GPIO_PINS_4)
+#define ESC_CS_LOW()    gpio_bits_reset(SPI2_CS_GPIO_PORT, SPI2_CS_PIN)
+#define ESC_CS_HIGH()   gpio_bits_set(SPI2_CS_GPIO_PORT, SPI2_CS_PIN)
 
 /* 基础的 SPI 单字节收发函数封装 */
-static uint8_t SPI_ReadWriteByte(uint8_t txData)
+static uint8_t spi_read_write_byte(uint8_t txData)
 {
     while(spi_i2s_flag_get(SPI2, SPI_I2S_TDBE_FLAG) == RESET);
     spi_i2s_data_transmit(SPI2, txData);
@@ -48,16 +48,16 @@ void HW_EscRead(MEM_ADDR *pData, uint16_t Address, uint16_t Len)
     
     ESC_CS_LOW();
     
-    /* 经典的 ESC SPI 读时序 (2字节地址 + 1字节命令码) 
-       注意：具体命令码请参考 CF1106A 芯片手册，这里以标准 ET1100 兼容格式为例 */
-    SPI_ReadWriteByte((Address >> 8) & 0xFF);     // Address High
-    SPI_ReadWriteByte(Address & 0xFF);            // Address Low
-    SPI_ReadWriteByte(0x02); // 0x02通常表示 Read Command (带Wait State请看手册)
+    spi_read_write_byte((Address >> 5) & 0xFF);
+    
+    /* 字节2：地址 A[4:0] << 3 拼接 读命令 (010b = 0x02) */
+    spi_read_write_byte(((Address & 0x1F) << 3) | 0x02);
+	spi_read_write_byte(0xFF);
 
-    /* 连续读取数据 */
+    /* 连续读取定长数据 */
     while (Len > 0)
     {
-        *pBuf++ = SPI_ReadWriteByte(0xFF); // 发送 Dummy Byte 获取数据
+        *pBuf++ = spi_read_write_byte(0xFF); // 发送 Dummy 字节获取数据
         Len--;
     }
     
@@ -76,15 +76,15 @@ void HW_EscWrite(MEM_ADDR *pData, uint16_t Address, uint16_t Len)
     
     ESC_CS_LOW();
     
-    /* 发送地址和写命令 */
-    SPI_ReadWriteByte((Address >> 8) & 0xFF);     // Address High
-    SPI_ReadWriteByte(Address & 0xFF);            // Address Low
-    SPI_ReadWriteByte(0x04); // 0x04通常表示 Write Command
+    spi_read_write_byte((Address >> 5) & 0xFF);
+    
+    /* 字节2：地址 A[4:0] << 3 拼接 写命令 (100b = 0x04) */
+    spi_read_write_byte(((Address & 0x1F) << 3) | 0x04);
 
-    /* 连续写入数据 */
+    /* 连续写入定长数据 */
     while (Len > 0)
     {
-        SPI_ReadWriteByte(*pBuf++);
+        spi_read_write_byte(*pBuf++);
         Len--;
     }
     
