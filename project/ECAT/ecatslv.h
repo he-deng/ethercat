@@ -42,7 +42,7 @@ V5.01 : Start file change log
 #include "ecat_def.h"
 
 #include  "esc.h"
-"at32_hw.h"
+#include "cf1106_hw.h"
 
 #ifndef _ECATSLV_H_
 #define _ECATSLV_H_

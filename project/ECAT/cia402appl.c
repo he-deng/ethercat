@@ -1439,30 +1439,30 @@ void APPL_Application(void)
  \brief    This is the main function
 
 *////////////////////////////////////////////////////////////////////////////////////////
-int main(void)
-{
-    /* initialize the Hardware and the EtherCAT Slave Controller */
-    HW_Init();
+//int main(void)
+//{
+//    /* initialize the Hardware and the EtherCAT Slave Controller */
+//    HW_Init();
 
-    MainInit();
+//    MainInit();
 
-    /*Initialize Axes structures*/
-    CiA402_Init();
+//    /*Initialize Axes structures*/
+//    CiA402_Init();
 
-    /*Create basic mapping*/
-    APPL_GenerateMapping(&nPdInputSize,&nPdOutputSize);
-    bRunApplication = TRUE;
-    do
-    {
-        MainLoop();
+//    /*Create basic mapping*/
+//    APPL_GenerateMapping(&nPdInputSize,&nPdOutputSize);
+//    bRunApplication = TRUE;
+//    do
+//    {
+//        MainLoop();
 
-    } while (bRunApplication == TRUE);
+//    } while (bRunApplication == TRUE);
 
-    CiA402_DeallocateAxis();
+//    CiA402_DeallocateAxis();
 
-    HW_Release();
-    return 0;
-}
+//    HW_Release();
+//    return 0;
+//}
 
 /** @} */
 

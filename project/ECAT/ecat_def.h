@@ -20,6 +20,7 @@
 -----------------------------------------------------------------------------------------*/
 #include <stdlib.h>
 #include <string.h>
+#include "cf1106_hw.h"
 
 /*-----------------------------------------------------------------------------------------
 ------	
@@ -946,7 +947,7 @@ DEVICE_SW_VERSION_LEN: Length of 'DEVICE_SW_VERSION' without '\0' */
 MIN_PD_WRITE_ADDRESS: Minimum address for the process output data (Sync Manager 2)<br>
 inside the application memory of the EtherCAT Slave Controller which could be set by the master. The setting have to be within the ranges of the user memory of the ESC (this is not checked by the tool). */
 #ifndef MIN_PD_WRITE_ADDRESS
-#define MIN_PD_WRITE_ADDRESS                      0x1000
+#define MIN_PD_WRITE_ADDRESS                      0x1800
 #endif
 
 /** 
@@ -960,7 +961,7 @@ inside the application memory of the EtherCAT Slave Controller which could be se
 MIN_PD_READ_ADDRESS: Minimum address for the process input data (Sync Manager 3)<br>
 inside the application memory of the EtherCAT Slave Controller which could be set by the master. The setting have to be within the ranges of the user memory of the ESC (this is not checked by the tool). */
 #ifndef MIN_PD_READ_ADDRESS
-#define MIN_PD_READ_ADDRESS                       0x1000
+#define MIN_PD_READ_ADDRESS                       0x1C00
 #endif
 
 /** 

@@ -644,7 +644,7 @@ PROTO    UINT8 SDOS_SdoInd(TINITSDOMBX MBXMEM *pSdoInd);
 
 PROTO    void  SDOS_SdoRes(UINT8 abort, UINT32 objLength, UINT16 MBXMEM *pData);
 /* ECATCHANGE_START(V5.12) MBX3*/
-PROTO    void  SODS_ClearPendingResponse();
+PROTO    void  SODS_ClearPendingResponse(void);
 /* ECATCHANGE_END(V5.12) MBX3*/
 
 
